@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link href="../css/style2.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
 
 
 </head>
@@ -25,7 +27,53 @@
 
 {{> header}}
 
-<div class="back">
+<div  style="position: relative;">
+    <div style="border:1px solid black;box-sizing: border-box;">
+        <div style="position: absolute; left: 55%; top: 0; background-color: black;  margin: 5%; width: 350px;border: 20px solid black;box-sizing: border-box; border-radius: 0.83em">
+            <p style=" justify-content: center;text-align: center; color: white; font-size: x-large;font-family: gotham, serif !important; margin-top: 5%"> Trouvez le bien qui vous correspond !</p>
+            <br>
+            <form name="formAccueil" onsubmit="validateForm()" method="post" style="font-family: gotham, serif; font-size: large" >
+                <div class="form-group row" style="border-radius: 0;" >
+                    <div class="flex-column" style="width: 43.5%; margin-left: 4%;">
+                        <label style="; position: absolute;"  for="type"></label>
+                        <select id="type" class="form-control">
+                            <option>Achat</option>
+                            <option>Location</option>
+                        </select>
+                    </div>
+                    <div class="flex-column" style="width: 43.5%; margin-left: 5%; margin-right: 4%">
+                        <label style="; position: absolute;" for="pays"></label>
+                        <select id="pays" class="form-control">
+                            <option>France</option>
+                            <option>Belgique</option>
+                            <option>Suisse</option>
+                            <option>Monaco</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="border-radius: 0">
+                    <label for="localisation"></label>
+                    <input  style="padding-left: 40px; border-radius: 0 ; background: url(../images/logoLocation.PNG)  white no-repeat scroll 5px -4px ;background-size: 32px;" type="text" id="localisation" class="form-control" placeholder="Ville, code postal, région ...">
+                </div>
+                <div class="form-group" style="border-radius: 0">
+                    <label for="prix"></label>
+                    <input style="padding-left: 40px; border-radius: 0 ; background: url(../images/logoEuro.PNG)  white no-repeat scroll 7px 3px ;background-size: 30px;" type="text" id="prix" class="form-control" pattern="[0-9]+" placeholder="Prix maximum">
+                </div>
+                <button type="submit" class="btn" style="text-align: center; border-radius: 20px ;margin-left: 7%; margin-top: 5%; width: 88%; background-color: #ba903b;font-family: gotham, serif;font-size: 16px;color: white">Rechercher</button>
+            </form>
+            <br>
+        </div>
+    </div>
+
+
+    <img src="../images/provence2.jpg" alt="Maison" class="responsive" width="1920" height="821">
+    <!--<img src="../images/provence2noir.jpg" alt="Maison" class="responsive" width="1920" height="821">-->
+    <!--<img src="../images/choix1noir.jpg" alt="Maison" class="responsive" width="1500" height="1138">-->
+    <div style="border:1px solid black;box-sizing: border-box;">
+    </div>
+
 </div>
+
+
 </body>
 </html>

@@ -99,7 +99,8 @@ li{
 
 /* width */
 html::-webkit-scrollbar {
-    width: 5px;
+    width: 0.83rem;
+    height: 0.83rem;
     background-color: #F5F5F5;
 }
 

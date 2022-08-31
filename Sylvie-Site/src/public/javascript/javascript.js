@@ -102,3 +102,7 @@ function userGetDisconnected(){
     document.getElementById("filmIndividuel").hidden = true;
 }
 
+function validateForm(){
+    console.log("formulaire validé");
+}
+
