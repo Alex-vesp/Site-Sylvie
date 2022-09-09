@@ -50,8 +50,13 @@ code {
 }
 
 li{
-    margin-right: 100px;
-    margin-bottom: 0;
+    margin-right: 70px;
+    margin-top: 1%;
+}
+
+li a {
+    overflow: hidden;
+    white-space: nowrap;
 }
 .nav-link{display:block;padding:.5rem 1rem}
 .nav-link:hover{text-decoration:none}
@@ -100,7 +105,7 @@ li{
 /* width */
 html::-webkit-scrollbar {
     width: 0.83rem;
-    height: 0.83rem;
+    height: 0;
     background-color: #F5F5F5;
 }
 
@@ -121,4 +126,181 @@ html::-webkit-scrollbar-thumb {
 /* Handle on hover */
 html::-webkit-scrollbar-thumb:hover {
     background: #8A6A29;
+}
+
+@media only screen and (max-width: 400px) {
+    #mobile-icon {
+        display: block !important;
+    }
+    #myTopnav {
+        display: none;
+    }
+    #imgMaison{
+        content:url("../images/provence400px.jpg");
+        width: 100%;
+    }
+    #fenetreForm {
+        margin-left: 5% !important;
+        width: 90% !important;
+        margin-top: 20% !important;
+    }
+    #borderTop {
+        border: none !important;
+    }
+    #borderBot {
+        border: none !important;
+    }
+}
+
+@media only screen and (max-width: 600px)  and (min-width: 401px) {
+    #mobile-icon {
+        display: block !important;
+    }
+    #myTopnav {
+        display: none;
+    }
+    #imgMaison{
+        content:url("../images/provence600px.jpg");
+        width: 100%;
+    }
+    #fenetreForm {
+        margin-left: 5% !important;
+        width: 90% !important;
+        margin-top: 20% !important;
+    }
+    #borderTop {
+        border: none !important;
+    }
+    #borderBot {
+        border: none !important;
+    }
+}
+
+@media only screen and (max-width: 999px) and (min-width: 601px) {
+    #fenetreForm {
+        margin-left: 10% !important;
+        width: 80% !important;
+    }
+    #borderTop {
+        border: none !important;
+    }
+    #borderBot {
+        border: none !important;
+    }
+    #mobile-icon {
+        display: block !important;
+    }
+    #myTopnav {
+        display: none;
+    }
+    #imgMaison{
+        content:url("../images/provence1000px.jpg");
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+    #fenetreForm {
+        margin-left: 100% !important;
+        width: 40% !important;
+        margin-top: 15% !important;
+    }
+}
+
+
+#mobile-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+#mobile-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: #ba903b;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#imgLogo {
+    display: flex;
+    align-items: center;
+}
+
+#imgMobile {
+    position: absolute;
+    top: -4px;
+    left: 20%;
+    background-color: white !important;
+}
+.open .bar1 {
+    margin-top: 10px;
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.open .bar3 {
+    margin-top: 10px;
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu {
+    list-style : none;
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.mobile-menu li {
+    margin-bottom: 30px;
+}
+
+.mobile-color {
+    color: black !important;
+    opacity: 0.7;
+}
+
+#fenetreForm {
+    position: absolute;
+    background-color: black;
+    margin-left: 60%;
+    margin-top: 5%;
+    width: 19%;
+    border: 20px solid black;
+    box-sizing: border-box;
+    border-radius: 0.83em
+
+}
+
+#borderTop, #borderBot {
+    border:1px solid black;
+    box-sizing: border-box;
+}
+
+#borderMobileTop{
+    height: 10px;
+    background-color: white !important;
+}
+
+#borderMobileBot{
+    height: 10px;
+    background-color: white !important;
 }

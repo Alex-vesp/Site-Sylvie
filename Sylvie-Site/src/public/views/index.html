@@ -19,6 +19,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
+    <script src="../javascript/javascript.js"></script>
 
 
 </head>
@@ -27,9 +28,9 @@
 
 {{> header}}
 
-<div  style="position: relative;">
-    <div style="border:1px solid black;box-sizing: border-box;">
-        <div style="position: absolute; left: 55%; top: 0; background-color: black;  margin: 5%; width: 350px;border: 20px solid black;box-sizing: border-box; border-radius: 0.83em">
+<div id="form" style="position: relative;">
+    <div id="borderTop">
+        <div id="fenetreForm">
             <p style=" justify-content: center;text-align: center; color: white; font-size: x-large;font-family: gotham, serif !important; margin-top: 5%"> Trouvez le bien qui vous correspond !</p>
             <br>
             <form name="formAccueil" onsubmit="validateForm()" method="post" style="font-family: gotham, serif; font-size: large" >
@@ -66,10 +67,10 @@
     </div>
 
 
-    <img src="../images/provence2.jpg" alt="Maison" class="responsive" width="1920" height="821">
+    <a id="imgBackground"><img id="imgMaison" height="821" src="../images/provence2.jpg" alt="Maison"></a>
     <!--<img src="../images/provence2noir.jpg" alt="Maison" class="responsive" width="1920" height="821">-->
     <!--<img src="../images/choix1noir.jpg" alt="Maison" class="responsive" width="1500" height="1138">-->
-    <div style="border:1px solid black;box-sizing: border-box;">
+    <div id="borderBot">
     </div>
 
 </div>

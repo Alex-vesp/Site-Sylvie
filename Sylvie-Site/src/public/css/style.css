@@ -135,11 +135,6 @@ margin-left: 7%;
     opacity: 1;
 }
 
-.responsive {
-    width: 100%;
-    height: auto;
-}
-
 .tag {
     float: left;
     position: absolute;

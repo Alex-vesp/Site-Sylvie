@@ -105,4 +105,12 @@ function userGetDisconnected(){
 function validateForm(){
     console.log("formulaire validé");
 }
-
+function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+    x = document.getElementById("form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
