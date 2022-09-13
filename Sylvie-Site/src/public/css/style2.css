@@ -49,7 +49,7 @@ code {
     color : #FFD700 !important;
 }
 
-li{
+.nav-item{
     margin-right: 70px;
     margin-top: 1%;
 }
@@ -150,6 +150,22 @@ html::-webkit-scrollbar-thumb:hover {
     #borderBot {
         border: none !important;
     }
+    .column {
+        width: 100% !important;
+        float: none !important;
+    }
+    #carouselExampleControls1 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls2 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls3 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
 }
 
 @media only screen and (max-width: 600px)  and (min-width: 401px) {
@@ -174,12 +190,28 @@ html::-webkit-scrollbar-thumb:hover {
     #borderBot {
         border: none !important;
     }
+    .column {
+        width: 100% !important;
+        float: none !important;
+    }
+    #carouselExampleControls1 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls2 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls3 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
 }
 
 @media only screen and (max-width: 999px) and (min-width: 601px) {
     #fenetreForm {
-        margin-left: 10% !important;
-        width: 80% !important;
+        margin-left: 20% !important;
+        width: 60% !important;
     }
     #borderTop {
         border: none !important;
@@ -197,16 +229,50 @@ html::-webkit-scrollbar-thumb:hover {
         content:url("../images/provence1000px.jpg");
         width: 100%;
     }
+    .column {
+        width: 100% !important;
+        float: none !important;
+    }
+    #carouselExampleControls1 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls2 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
+    #carouselExampleControls3 {
+        width: 75% !important;
+        margin-left: 12.5% !important;
+    }
 }
 
 
 @media only screen and (max-width: 1200px) and (min-width: 1000px) {
     #fenetreForm {
-        margin-left: 100% !important;
-        width: 40% !important;
-        margin-top: 15% !important;
+        margin-left: 50% !important;
+        width: 30% !important;
+        margin-top: 70px !important;
+    }
+    .nav-item {
+        margin-right: 0;
+    }
+    .nav {
+        font-size: medium;
     }
 }
+
+@media only screen and (max-width: 1500px) and (min-width: 1201px) {
+    #fenetreForm {
+        margin-left: 60% !important;
+        width: 25% !important;
+        margin-top: 100px !important;
+    }
+    .nav-item {
+        margin-right: 30px;
+    }
+}
+
 
 
 #mobile-icon {
@@ -304,3 +370,46 @@ html::-webkit-scrollbar-thumb:hover {
     height: 10px;
     background-color: white !important;
 }
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.trait1 {
+    margin-top: 1%;
+    content: "";
+    right: 0;
+    left: 0;
+    height: 2px;
+    position: absolute;
+    display: block;
+    width: 7rem;
+    background: #ba903b;
+    margin-left: calc(50% - 7rem/2);
+}
+.trait2 {
+    margin-top: 1.5%;
+    content: "";
+    right: 0;
+    left: 0;
+    height: 3px;
+    position: absolute;
+    display: block;
+    width: 7rem;
+    background: #ba903b;
+    margin-left: calc(50% - 7rem/2);
+}
+
+
