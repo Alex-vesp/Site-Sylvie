@@ -33,7 +33,7 @@
         <div id="fenetreForm">
             <p style=" justify-content: center;text-align: center; color: white; font-size: x-large;font-family: gotham, serif !important; margin-top: 5%"> Trouvez le bien qui vous correspond !</p>
             <br>
-            <form name="formAccueil" onsubmit="validateForm()" method="post" style="font-family: gotham, serif; font-size: large" >
+            <form name="formAccueil" action="/achat" method="post" style="font-family: gotham, serif; font-size: large" >
                 <div class="form-group row" style="border-radius: 0;" >
                     <div class="flex-column" style="width: 43.5%; margin-left: 4%;">
                         <label style="; position: absolute;"  for="type"></label>
@@ -80,41 +80,57 @@
 <h1 class="vedette" style="text-align: center;font-family: Gotham, serif !important;">Nos biens vedettes du moment</h1>
 <div class="trait1"></div>
 <div class="trait2"></div>
-<div class="row">
+<div class="row" style="margin: 0 auto ;max-width: 100rem">
     <div class="column">
-        <div id="vedette1" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vedette1" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%;box-shadow: 0 2px 8px rgba(0,0,0,.16);">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vedette1')" class="carousel-control-prev"  role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vedette1')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div class="column">
-        <div id="vedette2" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vedette2" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vedette2')" class="carousel-control-prev"  role="button" data-slide="prev">
@@ -122,22 +138,38 @@
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vedette2')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div class="column">
-        <div id="vedette3" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vedette3" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vedette3')" class="carousel-control-prev"  role="button" data-slide="prev">
@@ -145,28 +177,44 @@
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vedette3')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
-<h1 class="vedette" style="text-align: center;font-family: Gotham, serif !important;">Nos dernières ventes</h1>
+<h1 class="vedette" style="text-align: center;font-family: Gotham, serif !important;margin-top: 8rem">Nos dernières ventes</h1>
 <div class="trait1"></div>
 <div class="trait2"></div>
-<div class="row">
+<div class="row" style="margin: 0 auto ;max-width: 100rem">
     <div class="column">
-        <div id="vendus1" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vendus1" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; ">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vendus1')" class="carousel-control-prev"  role="button" data-slide="prev">
@@ -174,22 +222,38 @@
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vendus1')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div class="column">
-        <div id="vendus2" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vendus2" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vendus2')" class="carousel-control-prev"  role="button" data-slide="prev">
@@ -197,22 +261,38 @@
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vendus2')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div class="column">
-        <div id="vendus3" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; border-color: #5a6268; border-style: solid;">
+        <div id="vendus3" class="carousel slide" data-ride="carousel" style="width: 80%; margin-left: 10%; margin-top: 10%; ">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence600px.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height:220px;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
+                    <img style="height:18rem;width:auto;object-fit: cover;" class="d-block w-100" src="../images/provence2noir.jpg" alt="Third slide">
                 </div>
             </div>
             <a onclick="faireDefilerCarouselArriere('vendus3')" class="carousel-control-prev"  role="button" data-slide="prev">
@@ -220,13 +300,31 @@
                 <span class="sr-only" >Previous</span>
             </a>
             <a onclick="faireDefilerCarouselAvant('vendus3')" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="cursor: pointer; margin-bottom: 15rem;color:white"></span>
                 <span class="sr-only" >Next</span>
             </a>
+            <div style="padding: 2rem 2rem 1rem;font-family: Gotham, serif !important;border-color: rgba(90, 98, 104, 0.2); border-style: solid;border-width: 1px; height: 16rem">
+                <a>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;font-weight: 500;">
+                        Villa
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.35rem;font-weight: 500;">
+                        4 pièces • 150 m²
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        Aix-en-provence
+                    </div>
+                    <div style="margin-bottom: 1rem;font-size: 1.5rem;">
+                        650 000€
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
+<div style="margin-bottom: 8rem">
 
+</div>
 </body>
 
 {{> footer}}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Agence immobilière</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-3.4.0.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="../css/style2.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
+    <script src="../javascript/javascript.js"></script>
+
+</head>
+<body>
+
+{{> header}}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="height: 14%; ">
+    <div class="container-fluid" style="justify-content: center !important;">
+        <form name="formAchat" action="/achat" method="post" style="font-family: gotham, serif; font-size: large;" >
+            <ul class="listAchat">
+                <li id="achatPays" style="margin-top: auto;margin-bottom: auto; margin-right: 10%; position: center; display: inline-block; ">
+                    <div class="form-group" style="margin-bottom: -10px; width: 12rem">
+                        <label style="position: absolute;" for="pays"></label>
+                        <select style="height: 4rem;" id="pays" class="form-control">
+                            <option>France</option>
+                            <option>Belgique</option>
+                            <option>Suisse</option>
+                            <option>Monaco</option>
+                        </select>
+                    </div>
+                </li>
+                <li id="achatLoc" style="margin-top: auto;margin-bottom: auto;  margin-right: 10%; position: center; display: inline">
+                    <div class="form-group" style="border-radius: 0; width: 20rem">
+                        <label for="localisation"></label>
+                        <input  style="height: 4rem;padding-left: 50px; border-radius: 0 ; background: url(../images/logoLocation.PNG)  white no-repeat scroll 5px 0.6rem ;background-size: 32px;" type="text" id="localisation" class="form-control" placeholder="Ville, code postal, région ...">
+                    </div>
+                </li>
+                <li id="achatPrix" style="margin-top: auto;margin-bottom: auto;  margin-right: 60%; position: center; display: inline">
+                    <div class="form-group" style="border-radius: 0; width: 12rem">
+                        <label for="prix"></label>
+                        <input style="height: 4rem;padding-left: 40px; border-radius: 0 ; background: url(../images/logoEuro.PNG)  white no-repeat scroll 7px 1rem ;background-size: 30px;" type="text" id="prix" class="form-control" pattern="[0-9]+" placeholder="Prix maximum">
+                    </div>
+                </li>
+                <li id="achatRechercher" style="margin-top: auto;margin-bottom: auto;  width: auto">
+                    <button type="submit" class="btn" style="width: 12rem ;text-align: center; border-radius: 20px ; background-color: #ba903b;font-family: gotham, serif;font-size: 20px;color: white; margin-top: 1rem;height: 4rem;">Rechercher</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
+
+
+
+{{> footer}}
+</body>
+</html>

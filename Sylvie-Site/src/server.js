@@ -121,6 +121,11 @@ app.post('/index.html', (req, res) =>{
     res.render('indexTri', (results));
 });
 
+app.post('/achat', (req, res) => {
+    res.redirect('achat.html');
+});
+
+
 /*
 app.post('/login', (req, res) => {
     const user = model.login(req.body.user, getHashedPassword(req.body.password));
@@ -148,6 +153,7 @@ app.post('/pageAjouterFilm.html', (req, res) => {
     if (user === -1 ) res.status(401).send('Film déjà présent dans la base de donnée !');
     res.redirect('index.html');
 });
+
 
 app.post('/pageInscription.html', (req, res) => {
     if (req.body.mdp === req.body.mdpconfirm) {
@@ -281,9 +287,9 @@ app.get('/index.html', (req, res) => {
     res.render('index');
 });
 
-/*app.get('/pageConnecte.html', (req, res) => {
-    res.render('pageConnecte');
-});*/
+app.get('/achat.html', (req, res) => {
+    res.render('achat');
+});
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');

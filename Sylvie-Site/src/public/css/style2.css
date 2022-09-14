@@ -41,7 +41,7 @@ code {
     padding-top: 40px;
     display: inline-block;
     position: relative;
-    font-family: 'Cinzel', serif !important;
+    font-family: 'Cinzel', serif ;
     color: rgba(0,0,0,.5) !important;
 }
 
@@ -166,6 +166,26 @@ html::-webkit-scrollbar-thumb:hover {
         width: 75% !important;
         margin-left: 12.5% !important;
     }
+    .listAchat {
+        flex-direction: column !important;
+    }
+    #achatLoc {
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+    }
+    #achatPays {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+    #achatPrix {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    #achatRechercher {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 600px)  and (min-width: 401px) {
@@ -206,6 +226,25 @@ html::-webkit-scrollbar-thumb:hover {
         width: 75% !important;
         margin-left: 12.5% !important;
     }
+    .listAchat {
+        flex-direction: column !important;
+    }
+    #achatLoc {
+        margin-left: 10rem !important;
+        margin-right: 10rem !important;
+    }
+    #achatPays {
+        margin-left: 35% !important;
+    }
+    #achatPrix {
+        margin-left: 35% !important;
+        margin-top: -1.25rem !important;
+        margin-bottom: 2rem !important;
+    }
+    #achatRechercher {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 999px) and (min-width: 601px) {
@@ -245,6 +284,25 @@ html::-webkit-scrollbar-thumb:hover {
         width: 75% !important;
         margin-left: 12.5% !important;
     }
+    .listAchat {
+        flex-direction: column !important;
+    }
+    #achatLoc {
+        margin-left: 10rem !important;
+        margin-right: 10rem !important;
+    }
+    #achatPays {
+        margin-left: 35% !important;
+    }
+    #achatPrix {
+        margin-left: 35% !important;
+        margin-top: -1.25rem !important;
+        margin-bottom: 2rem !important;
+    }
+    #achatRechercher {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 
@@ -260,6 +318,15 @@ html::-webkit-scrollbar-thumb:hover {
     .nav {
         font-size: medium;
     }
+    #achatLoc {
+        margin-right: 3% !important;
+    }
+    #achatPays {
+        margin-right: 3% !important;
+    }
+    #achatPrix {
+        margin-right: 3% !important;
+    }
 }
 
 @media only screen and (max-width: 1500px) and (min-width: 1201px) {
@@ -270,6 +337,28 @@ html::-webkit-scrollbar-thumb:hover {
     }
     .nav-item {
         margin-right: 30px;
+    }
+    #achatLoc {
+        margin-right: 4% !important;
+    }
+    #achatPays {
+        margin-right: 4% !important;
+    }
+    #achatPrix {
+        margin-right: 17% !important;
+    }
+}
+
+
+@media only screen and (min-width: 1501px) and (max-width: 1750px) {
+    #achatLoc {
+        margin-right: 7.5% !important;
+    }
+    #achatPays {
+        margin-right: 7.5% !important;
+    }
+    #achatPrix {
+        margin-right: 42% !important;
     }
 }
 
@@ -412,4 +501,14 @@ html::-webkit-scrollbar-thumb:hover {
     margin-left: calc(50% - 7rem/2);
 }
 
-
+.listAchat {
+    display: -ms-flexbox;
+    display: flex !important;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    justify-content: center !important;
+    text-align:center;
+}

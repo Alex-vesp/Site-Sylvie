@@ -102,9 +102,14 @@ function userGetDisconnected(){
     document.getElementById("filmIndividuel").hidden = true;
 }
 
-function validateForm(){
+function validateFormAccueil(){
     console.log("formulaire validé");
 }
+
+function validateFormAchat(){
+    console.log("formulaire validé");
+}
+
 function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
     x = document.getElementById("form");
