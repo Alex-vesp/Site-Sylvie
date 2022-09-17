@@ -126,6 +126,8 @@ app.post('/achat', (req, res) => {
 });
 
 
+
+
 /*
 app.post('/login', (req, res) => {
     const user = model.login(req.body.user, getHashedPassword(req.body.password));
@@ -290,6 +292,21 @@ app.get('/index.html', (req, res) => {
 app.get('/achat.html', (req, res) => {
     res.render('achat');
 });
+
+app.get('/location.html', (req, res) => {
+    res.render('location');
+});
+
+app.get('/location/:id', (req, res) => {
+    var entry = model.read(req.params.id);
+    res.render('detailLocation', (entry));
+});
+
+app.get('/achat/:id', (req, res) => {
+    var entry = model.read(req.params.id);
+    res.render('detailAchat', (entry));
+});
+
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');

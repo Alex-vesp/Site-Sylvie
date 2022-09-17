@@ -3,27 +3,29 @@
         <a id="aImg" class="navbar-brand" href="index.html"><img height="50" loading="lazy" id="imgLogo" src="../images/logo.jpg" alt="Logo"></a>
         <div id="navbarContent" class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav">Notre agence</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav">Notre agence</a></li>
                 <li class="nav-item"><a href="achat.html" class="nav-link font-weight-bold text-uppercase nav">Achat</a></li>
-                <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav">Location</a></li>
-                <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav">Vendre</a></li>
-                <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav">Nous contacter</a></li>
+                <li class="nav-item"><a href="location.html" class="nav-link font-weight-bold text-uppercase nav">Location</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav">Vendre</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav">Nous contacter</a></li>
             </ul>
         </div>
     </nav>
-    <div id="mobile-icon" onclick="toggleMobileMenu(this)">
-        <div id="imgMobile" class="navbar-brand" href="index.html"><img height="35" loading="lazy" src="../images/logo.jpg" alt="Logo"></div>
+    <div id="mobile-icon" >
+        <div id="imgMobile" class="navbar-brand" ><img href="index.html" height="35" loading="lazy" src="../images/logo.jpg" alt="Logo"></div>
         <div id="borderMobileTop"></div>
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+        <span onclick="toggleMobileMenu(document.getElementById('mobile-icon'))">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </span>
         <div id="borderMobileBot"></div>
         <ul class="mobile-menu">
-            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav mobile-color">Notre agence</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav mobile-color">Notre agence</a></li>
             <li class="nav-item"><a href="achat.html" class="nav-link font-weight-bold text-uppercase nav mobile-color">Achat</a></li>
-            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav mobile-color">Location</a></li>
-            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav mobile-color">Vendre</a></li>
-            <li class="nav-item"><a href="" class="nav-link font-weight-bold text-uppercase nav mobile-color">Nous contacter</a></li>
+            <li class="nav-item"><a href="location.html" class="nav-link font-weight-bold text-uppercase nav mobile-color">Location</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav mobile-color">Vendre</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link font-weight-bold text-uppercase nav mobile-color">Nous contacter</a></li>
         </ul>
     </div>
 </header>

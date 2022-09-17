@@ -100,8 +100,9 @@ exports.addList = (id, nouvelleListe) => {
     db.prepare('INSERT INTO Liste(nomListe, idUtilisateur) VALUES (?, ?)').run(nouvelleListe, id);
 }
 
-
+*/
 exports.read = (id) => {
+    /*
     let idFilm = id;
     var nomFilm = db.prepare('SELECT nomFilm FROM Film WHERE idFilm = ?').get(id).nomFilm;
     var dateFilm = db.prepare('SELECT  dateFilm FROM Film WHERE idFilm = ?').get(id).dateFilm;
@@ -133,10 +134,33 @@ exports.read = (id) => {
         duree: duree,
         image: image,
         results : results,
-    };
+    };*/
+    return {
+        id : id,
+        type : "achat",
+        bien: "Maison provençale",
+        lieu: "Venelles, Aix-en-provence",
+        pieces: 5,
+        chambres: 4,
+        surface: 150,
+        prix : 6500000,
+        plus : ["piscine", "terasse", "belle vue", "calme"],
+        description : "A cinq minutes du centre ville d'Aix en Provence, très belle propriété de caractère en pierre de Bibemus d'une surface habitable de 270m2, posée sur un terrain de 3500m2 agrémenté de fontaines, d'arbres séculaires, une piscine avec un grand pool house aménagé de 70m2. La bâtisse dispose d'une belle réception avec cheminée, une cuisine entièrement équipée, 5 chambres avec salle de bains et salle d'eau et un bureau. Cette maison de Maître a su conserver le charme de l'ancien grâce à des matériaux de qualité et à son vécu.",
+        reference : "MA-50-D",
+        salleBain : 1,
+        salleEau : 1,
+        chauffage : "Electrique",
+        annee : "2002",
+        date : "20220917",
+        DPE : "B",
+        GES : "C",
+        photos : ["../images/provence2.jpg", "../images/provence2noir.jpg"],
+    }
 };
 
 
+
+/*
 
 
 exports.supprimerFilm = function(id) {

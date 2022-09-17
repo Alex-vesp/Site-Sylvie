@@ -168,23 +168,35 @@ html::-webkit-scrollbar-thumb:hover {
     }
     .listAchat {
         flex-direction: column !important;
+        margin-left: 0 !important;
+        text-align: left !important;
     }
     #achatLoc {
-        margin-left: -1rem !important;
-        margin-right: -1rem !important;
+        margin-left: 0;
     }
     #achatPays {
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
+        margin-top: 5% !important;
+        margin-left: 0;
+        margin-bottom: 1.5rem !important;
     }
     #achatPrix {
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
+        margin-left: 0;
         margin-bottom: 2rem !important;
+
     }
     #achatRechercher {
-        margin-left: 0 !important;
+        margin-left: 0;
+    }
+    #btnRechercher {
+        width: 310px !important;
+        margin-right: 35px !important;
+    }
+    .nav-item {
+
         margin-right: 0 !important;
+    }
+    .form-group{
+        width: 310px !important;
     }
 }
 
@@ -228,22 +240,34 @@ html::-webkit-scrollbar-thumb:hover {
     }
     .listAchat {
         flex-direction: column !important;
+        margin-left: 0 !important;
+        text-align: left !important;
     }
     #achatLoc {
-        margin-left: 10rem !important;
-        margin-right: 10rem !important;
+        margin-left: 0;
     }
     #achatPays {
-        margin-left: 35% !important;
+        margin-top: 5% !important;
+        margin-left: 0;
+        margin-bottom: 1.5rem !important;
     }
     #achatPrix {
-        margin-left: 35% !important;
-        margin-top: -1.25rem !important;
+        margin-left: 0;
         margin-bottom: 2rem !important;
+
     }
     #achatRechercher {
-        margin-left: 0 !important;
+        margin-left: 0;
+    }
+    #btnRechercher {
+        width: 350px !important;
+        margin-right: 35px !important;
+    }
+    .nav-item {
         margin-right: 0 !important;
+    }
+    .form-group{
+        width: 350px !important;
     }
 }
 
@@ -286,22 +310,35 @@ html::-webkit-scrollbar-thumb:hover {
     }
     .listAchat {
         flex-direction: column !important;
+        margin-left: 0 !important;
+        text-align: left !important;
     }
     #achatLoc {
-        margin-left: 10rem !important;
-        margin-right: 10rem !important;
+        margin-left: 0;
     }
     #achatPays {
-        margin-left: 35% !important;
+        margin-top: 5% !important;
+        margin-left: 0;
+        margin-bottom: 1.5rem !important;
     }
     #achatPrix {
-        margin-left: 35% !important;
-        margin-top: -1.25rem !important;
+        margin-left: 0;
         margin-bottom: 2rem !important;
+
     }
     #achatRechercher {
-        margin-left: 0 !important;
+        margin-left: 0;
+    }
+    #btnRechercher {
+        width: 550px !important;
+        margin-right: 35px !important;
+    }
+    .nav-item {
+
         margin-right: 0 !important;
+    }
+    .form-group{
+        width: 550px !important;
     }
 }
 
@@ -360,6 +397,11 @@ html::-webkit-scrollbar-thumb:hover {
     #achatPrix {
         margin-right: 42% !important;
     }
+}
+
+#resultatsAchat {
+    margin: 0 auto;
+    max-width: 125rem ;
 }
 
 

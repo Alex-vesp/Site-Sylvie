@@ -113,10 +113,23 @@ function validateFormAchat(){
 function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
     x = document.getElementById("form");
-    if (x.style.display === "none") {
+    achat = document.getElementById("nav-achat")
+    footer = document.getElementById("footer")
+    if (x != null && x.style.display === "none") {
         x.style.display = "block";
-    } else {
+    } else  if (x != null){
         x.style.display = "none";
+    }
+    if (achat != null && achat.style.display === "none") {
+        achat.style.display = "block";
+    } else  if (achat != null){
+        achat.style.display = "none";
+    }
+    if (footer.style.display === "none"){
+        footer.style.display = "block";
+    }
+    else {
+        footer.style.display = "none";
     }
 }
 
@@ -136,6 +149,10 @@ function faireDefilerCarouselAvant(id){
         x.children.item(0).children.item(0).classList.add('active');
     }
     else x.children.item(0).children.item(number+1).classList.add('active');
+}
+
+function println(data) {
+    console.log("DATA" + data);
 }
 
 function faireDefilerCarouselArriere(id){
