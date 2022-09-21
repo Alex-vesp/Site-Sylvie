@@ -623,3 +623,7 @@ html::-webkit-scrollbar-thumb:hover {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
+
+.choix:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,.16);
+}

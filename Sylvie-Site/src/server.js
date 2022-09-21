@@ -307,6 +307,10 @@ app.get('/achat/:id', (req, res) => {
     res.render('detailAchat', (entry));
 });
 
+app.get('/notreAgence.html', (req, res) => {
+    res.render('notreAgence');
+});
+
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');
