@@ -21,6 +21,7 @@
     <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
     <script src="../javascript/javascript.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 
 
@@ -32,9 +33,95 @@
 <div style="font-family: Ghotham, serif;margin: 0 auto; width: 70%; max-width: 220rem ; display: block;">
     <div style="text-align: center;margin-bottom: 1rem;font-size: 1rem;">
         <a><img  style="margin-top: 4%;" height="50" loading="lazy" src="../images/logo.jpg" alt="Logo"></a>
-        <h3 style="margin-top: 5%; margin-bottom: 3%">L’Agence des mandataires est un réseau de mandataires en immobilier expérimentés, spécialisés en transactions immobilières</h3>
-        <p style="text-align: left; margin-bottom: 5%">Le concept d’agence immobilière en ligne répond à une révolution digitale du marché de l’immobilier. Rayonnant sur toute la France, nos mandataires en immobilier, experts sur leur secteur se déplacent sur tout l’Hexagone ou travaillent en collaboration avec d’autres mandataires d’une autre région.</p>
+        <h2 style="margin-top: 5%; margin-bottom: 3%">Nous contacter</h2>
+        <h5 style="margin-top: 5%; margin-bottom: 3%">Vous souhaitez vendre votre bien, veuillez remplir ce court formulaire et nous reviendrons vers vous dans les plus brefs délais</h5>
     </div>
+    <section class="mb-4">
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" action="https://formsubmit.co/poncyalex@yahoo.fr" method="POST">
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="name" name="name" class="form-control">
+                                <label for="name" class="">Votre nom</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="email" name="email" class="form-control">
+                                <label for="email" class="">Votre email</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="subject" name="subject" class="form-control">
+                                <label for="subject" class="">Sujet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form">
+                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <label for="message">Votre message</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                </form>
+
+                <div class="text-center text-md-left" style="text-align: center !important;">
+                    <a type="button" class="btn btn-primary" style="color: white !important; padding: 10px 30px 10px 30px; align-content: center !important;" onclick="validateForm()" >Send</a>
+                <div class="status"></div>
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-3 text-center" style="margin-top: 5%;">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <br/>
+                        <a style="color: black;" href="tel:+33614087392">06 14 08 73 92</a>
+                    </li>
+
+                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                        <br/>
+                        <a style="color: black;" type="submit" href="mailto:direction@lagencedesmandataires.com">direction@lagencedesmandataires.com</a>
+                        <!--<a style="color: black;" href="mailto:poncyalex@yahoo.fr">poncyalex@yahoo.fr</a>-->
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </section>
 </div>
 
 </body>

@@ -311,6 +311,9 @@ app.get('/notreAgence.html', (req, res) => {
     res.render('notreAgence');
 });
 
+app.get('/vendre.html', (req, res) => {
+    res.render('vendre');
+});
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');
