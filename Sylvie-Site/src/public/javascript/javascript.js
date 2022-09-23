@@ -263,40 +263,104 @@ function faireDefilerCarouselArriereAchat(id){
     else x.children.item(4).children.item(number-1).classList.add('active');
 }
 
-function validateForm() {
+async function validateFormContact() {
     emailjs.init('0Hy-X1pZusrJjhO_I');
-    var name =  document.getElementById('name').value;
+    var name = document.getElementById('name').value;
     if (name == "") {
-        document.querySelector('.status').innerHTML = "Veuillez rensigner votre nom";
+        document.querySelector('.status').innerHTML = "Veuillez renseigner votre nom";
         return false;
     }
-    var email =  document.getElementById('email').value;
+    var email = document.getElementById('email').value;
     if (email == "") {
         document.querySelector('.status').innerHTML = "Veuillez renseigner votre adresse email";
         return false;
     } else {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(!re.test(email)){
-            document.querySelector('.status').innerHTML = "Form de l'adresse email incorrect";
+        if (!re.test(email)) {
+            document.querySelector('.status').innerHTML = "Format de l'adresse email incorrect";
             return false;
         }
     }
-    var subject =  document.getElementById('subject').value;
+    var subject = document.getElementById('subject').value;
     if (subject == "") {
         document.querySelector('.status').innerHTML = "Veuillez renseigner un sujet";
         return false;
     }
-    var message =  document.getElementById('message').value;
+    var message = document.getElementById('message').value;
     if (message == "") {
         document.querySelector('.status').innerHTML = "Veuillez renseigner un message";
         return false;
     }
-    document.querySelector('.status').innerHTML = "Sending...";
+    var tel = document.getElementById('tel').value;
+    document.querySelector('.status').innerHTML = "Envoie en cours...";
     var formData = {
         name,
         email,
         subject,
-        message
+        message,
+        tel
     }
-    emailjs.send("service_r7fxoim", "template_a51ugy3", formData)
+    emailjs.send("service_r7fxoim", "template_a51ugy3", formData);
+    await new Promise(r => setTimeout(r, 2000));
+    document.querySelector('.status').innerHTML = "Votre demande de contact a été envoyée avec succès...";
+    await new Promise(r => setTimeout(r, 5000));
+}
+
+async function validateFormVente() {
+    emailjs.init('0Hy-X1pZusrJjhO_I');
+    var name = document.getElementById('name').value;
+    if (name == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner votre nom";
+        return false;
+    }
+    var email = document.getElementById('email').value;
+    if (email == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner votre adresse email";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(email)) {
+            document.querySelector('.status').innerHTML = "Format de l'adresse email incorrect";
+            return false;
+        }
+    }
+    var type = document.getElementById('type').value;
+    if (type == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner le type du bien";
+        return false;
+    }
+    var lieu = document.getElementById('lieu').value;
+    if (lieu == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner la situation géographique du bien";
+        return false;
+    }
+    var surface = document.getElementById('surface').value;
+    if (surface == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner la surface du bien";
+        return false;
+    }
+    var prix = document.getElementById('prix').value;
+    if (prix == "") {
+        prix = "Non indiqué";
+    }
+    var message = document.getElementById('message').value;
+    if (message == "") {
+        message = "Pas de message";
+    }
+    var tel = document.getElementById('tel').value;
+    document.querySelector('.status').innerHTML = "Envoie en cours...";
+    var formData = {
+        name,
+        email,
+        type,
+        lieu,
+        tel,
+        message,
+        prix,
+        surface
+    }
+    emailjs.send("service_r7fxoim", "template_t6zuzon", formData);
+    await new Promise(r => setTimeout(r, 2000));
+    document.querySelector('.status').innerHTML = "Votre demande de vente a été envoyée avec succès...";
+    await new Promise(r => setTimeout(r, 5000));
 }

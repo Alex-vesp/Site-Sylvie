@@ -33,8 +33,8 @@
 <div style="font-family: Ghotham, serif;margin: 0 auto; width: 70%; max-width: 220rem ; display: block;">
     <div style="text-align: center;margin-bottom: 1rem;font-size: 1rem;">
         <a><img  style="margin-top: 4%;" height="50" loading="lazy" src="../images/logo.jpg" alt="Logo"></a>
-        <h2 style="margin-top: 5%; margin-bottom: 3%">Vendre votre bien</h2>
-        <h5 style="margin-top: 5%; margin-bottom: 3%">Vous souhaitez vendre votre bien, veuillez remplir ce court formulaire et nous reviendrons vers vous dans les plus brefs délais</h5>
+        <h2 style="margin-top: 5%; margin-bottom: 3%">Nous contacter</h2>
+        <h5 style="margin-top: 5%; margin-bottom: 3%">Vous souhaitez nous contacter, veuillez remplir ce court formulaire et nous reviendrons vers vous dans les plus brefs délais</h5>
     </div>
     <section class="mb-4">
         <div class="row">
@@ -49,7 +49,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
+                                <input required type="text" id="name" name="name" class="form-control">
                                 <label for="name" class="">Votre nom</label>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
+                                <input required type="text" id="email" name="email" class="form-control">
                                 <label for="email" class="">Votre email</label>
                             </div>
                         </div>
@@ -75,33 +75,13 @@
                             </div>
                         </div>
                     </div>
+
                     <!--Grid row-->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input type="text" id="type" name="type" class="form-control">
-                                <label for="type" class="">Type de bien</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input type="text" id="prix" name="prix" class="form-control">
-                                <label for="prix" class="">Prix (facultatif)</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input required type="text" id="lieu" name="lieu" class="form-control">
-                                <label for="lieu" class="">Ville / Code postal</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input required type="number" id="surface" name="surface" class="form-control">
-                                <label for="surface" class="">Surface</label>
+                                <input required type="text" id="subject" name="subject" class="form-control">
+                                <label for="subject" class="">Sujet</label>
                             </div>
                         </div>
                     </div>
@@ -114,8 +94,8 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                <label for="message">Votre message (facultatif)</label>
+                                <textarea required type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <label for="message">Votre message</label>
                             </div>
 
                         </div>
@@ -125,7 +105,7 @@
                 </form>
 
                 <div class="text-center text-md-left" style="text-align: center !important;">
-                    <a type="button" class="btn btn-primary" style="color: white !important; padding: 10px 30px 10px 30px; align-content: center !important;" onclick="validateFormVente()" >Send</a>
+                    <a type="button" class="btn btn-primary" style="color: white !important; padding: 10px 30px 10px 30px; align-content: center !important;" onclick="validateFormContact()" >Envoyer</a>
                 <div class="status"></div>
                 </div>
             </div>
@@ -138,7 +118,6 @@
                         <br/>
                         <a style="color: black;" href="tel:+33614087392">06 14 08 73 92</a>
                     </li>
-
                     <li><i class="fas fa-envelope mt-4 fa-2x"></i>
                         <br/>
                         <a style="color: black;" type="submit" href="mailto:direction@lagencedesmandataires.com">direction@lagencedesmandataires.com</a>

@@ -314,6 +314,10 @@ app.get('/notreAgence.html', (req, res) => {
 app.get('/vendre.html', (req, res) => {
     res.render('vendre');
 });
+
+app.get('/contact.html', (req, res) => {
+    res.render('contact');
+});
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');
