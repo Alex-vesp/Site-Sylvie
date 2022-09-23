@@ -307,17 +307,6 @@ app.get('/achat/:id', (req, res) => {
     res.render('detailAchat', (entry));
 });
 
-app.get('/notreAgence.html', (req, res) => {
-    res.render('notreAgence');
-});
-
-app.get('/vendre.html', (req, res) => {
-    res.render('vendre');
-});
-
-app.get('/contact.html', (req, res) => {
-    res.render('contact');
-});
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');
