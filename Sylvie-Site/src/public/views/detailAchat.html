@@ -24,6 +24,7 @@
 
 
 
+
 </head>
 <body>
 
@@ -42,7 +43,7 @@
             <div style=" width: 100%;display: flex; margin-bottom: 2%; ">
                 <h6 style="float: left">{{pieces}} Pièces • {{chambres}} Chambres • Surface de {{surface}} m²</h6>
             </div>
-            <div onclick="showModal('{{photos}}')" style="display: flex;cursor: pointer;"> <!--onclick="showPictures()"-->
+            <div  onclick="showModal('{{photos}}')" style="display: flex;cursor: pointer;"> <!--onclick="showPictures()" "-->
                 <div style="width: 70%; height: 40rem;display: inline-block;">
                     <img style="width:auto; height: 40rem;object-fit: cover;" class="d-block w-100" src="{{photos.0}}" alt="First slide">
                 </div>
@@ -58,15 +59,15 @@
             <!-- The Modal -->
             <div class="carousel-inner">
                 <div id="myModal" class="modal">
-                    <a role="button" onclick="close()" class="close">
-                        <span onclick="close()" style="cursor: pointer; margin-left: 50%" class="close">&times;</span>
-                    </a>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
                     <div id="caption"></div>
                     <a id="a1" onclick="faireDefilerCarouselArriereAchat('myModal')" class="carousel-control-prev"  role="button" data-slide="prev"></a>
                     <a id="a2" onclick="faireDefilerCarouselAvantAchat('myModal')" class="carousel-control-next" role="button" data-slide="next"></a>
+
                 </div>
             </div>
-        </div>
+            </div>
     </div>
 </div>
 
@@ -75,12 +76,30 @@
         <div style="margin-left: 25%; width: 50% ; margin-bottom: 1rem;font-size: 1rem;word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 5;-webkit-box-orient: vertical;">
             {{description}}
         </div>
-        <div>
-            <img style="margin-bottom: 1rem;width:auto; height: auto; object-fit: cover;" class="d-block w-100" src="{{photos.0}}" alt="Third slide">
-        </div>
-        <div>
-            <img style="margin-bottom: 1rem;width:auto; height: auto; object-fit: cover;" class="d-block w-100" src="{{photos.1}}" alt="Third slide">
-        </div>
+    </div>
+    <br/>
+    <br/>
+    <div style="margin-left: 25%; width: 50% ;">
+        <h3>Caractéristiques générales</h3>
+        <h5> {{plus.0}}</h5>
+    </div>
+    <div style="margin-left: 25%; width: 50% ;display: flex;">
+        <div id="dpe" style="display: inline-block;"></div>
+        <div id="ges" style="display: inline-block;"></div>
+
+        <script src="../javascript/dpeges.js"></script>
+        <script type="text/javascript">
+            var dpe = new DpeGes();
+            dpe.dpe({
+                domId: 'dpe',
+                value: 60,
+            });
+            var ges = new DpeGes();
+            ges.ges({
+                domId: 'ges',
+                value: 15
+            });
+        </script>
     </div>
 </div>
 </body>

@@ -175,51 +175,54 @@ function faireDefilerCarouselArriere(id){
 }
 
 function showModal(photos){
-    var modal = document.getElementById("myModal");
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    modal.style.display = "block";
-    var photosList = photos.split(',');
-    let innervdiv = document.createElement("div");
-    innervdiv.className = "carousel-inner";
-    for (let i=0; i < photosList.length; i++){
-        let div = document.createElement("div");
-        if (i == 0) {
-            div.className = "carousel-item active";
-        } else div.className = "carousel-item";
-        let elem = document.createElement("img");
-        elem.src = photosList[i];
-        elem.style = 'width:auto; height: 25rem;object-fit: cover; margin-left: 40%;';
-        div.appendChild(elem)
-        innervdiv.appendChild(div)
+
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        modal.style.display = "block";
+    if (document.getElementById("a1").children.length <= 0) {
+        var photosList = photos.split(',');
+        let innervdiv = document.createElement("div");
+        innervdiv.className = "carousel-inner";
+        for (let i = 0; i < photosList.length; i++) {
+            let div = document.createElement("div");
+            if (i == 0) {
+                div.className = "carousel-item active";
+            } else div.className = "carousel-item";
+            let elem = document.createElement("img");
+            elem.src = photosList[i];
+            elem.style = 'width:auto; height: 25rem;object-fit: cover; margin-left: 40%;';
+            div.appendChild(elem)
+            innervdiv.appendChild(div)
+        }
+        modal.appendChild(innervdiv);
+        let flecheLeft = document.getElementById("a1");
+        let span1 = document.createElement("span");
+        span1.className = "carousel-control-prev-icon";
+        span1.ariaHidden = "true";
+        span1.style = "cursor: pointer; color:white";
+        let span2 = document.createElement("span");
+        span2.className = "sr-only";
+        span2.innerText = "Previous";
+        flecheLeft.appendChild(span1);
+        flecheLeft.appendChild(span2);
+        let span3 = document.createElement("span");
+        span3.className = "carousel-control-next-icon";
+        span3.ariaHidden = "true";
+        span3.style = "cursor: pointer; color:white";
+        let span4 = document.createElement("span");
+        span4.className = "sr-only";
+        span4.innerText = "Next";
+        let flechRight = document.getElementById("a2");
+        flechRight.appendChild(span3);
+        flechRight.appendChild(span4);
+        captionText.innerHTML = "Photos du bien selectionné";
     }
-    modal.appendChild(innervdiv);
-    let flecheLeft = document.getElementById("a1");
-    let span1 = document.createElement("span");
-    span1.className = "carousel-control-prev-icon";
-    span1.ariaHidden = "true";
-    span1.style = "cursor: pointer; color:white";
-    let span2 = document.createElement("span");
-    span2.className = "sr-only";
-    span2.innerText = "Previous";
-    flecheLeft.appendChild(span1);
-    flecheLeft.appendChild(span2);
-    let span3 = document.createElement("span");
-    span3.className = "carousel-control-next-icon";
-    span3.ariaHidden = "true";
-    span3.style = "cursor: pointer; color:white";
-    let span4 = document.createElement("span");
-    span4.className = "sr-only";
-    span4.innerText = "Next";
-    let flechRight = document.getElementById("a2");
-    flechRight.appendChild(span3);
-    flechRight.appendChild(span4);
-    captionText.innerHTML = "Photos du bien selectionné";
 }
 
 function close(){
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close");
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
     console.log("here");
@@ -364,3 +367,7 @@ async function validateFormVente() {
     document.querySelector('.status').innerHTML = "Votre demande de vente a été envoyée avec succès...";
     await new Promise(r => setTimeout(r, 5000));
 }
+
+$(document).on('click','.close',function(){
+    close();
+})
