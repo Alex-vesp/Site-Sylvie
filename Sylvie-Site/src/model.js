@@ -176,7 +176,7 @@ exports.read = (id) => {
             chambres: 4,
             surface: 150,
             terrain: 850,
-            prix: "6 500 000",
+            prix: "650 000",
             plus: ["piscine", "terasse", "belle vue", "calme"],
             caracteristiques: ["Entrée", "1 salle de bain", "4 pièces", "3 chambres", "Plain-pied"],
             description: "A cinq minutes du centre ville d'Aix en Provence, très belle propriété de caractère en pierre de Bibemus d'une surface habitable de 270m2, posée sur un terrain de 3500m2 agrémenté de fontaines, d'arbres séculaires, une piscine avec un grand pool house aménagé de 70m2. La bâtisse dispose d'une belle réception avec cheminée, une cuisine entièrement équipée, 5 chambres avec salle de bains et salle d'eau et un bureau. Cette maison de Maître a su conserver le charme de l'ancien grâce à des matériaux de qualité et à son vécu.",

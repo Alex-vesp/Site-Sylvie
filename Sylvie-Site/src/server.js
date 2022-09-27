@@ -125,6 +125,14 @@ app.post('/achat', (req, res) => {
     res.redirect('achat.html');
 });
 
+app.get('/vendre.html', (req, res) => {
+    res.render('vendre');
+});
+
+app.get('/contact.html', (req, res) => {
+    res.render('contact');
+});
+
 
 
 
