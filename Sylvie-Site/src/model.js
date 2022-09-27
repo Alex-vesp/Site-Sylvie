@@ -147,12 +147,14 @@ exports.read = (id) => {
             surface: 120,
             terrain: 850,
             prix: "315 900",
-            plus: ["calme"],
+            plus: ["Calme", "4 pièces", "Quartier prisé"],
+            caracteristiques: ["Entrée", "1 salle de bain", "4 pièces", "3 chambres", "Plain-pied"],
             description: "Dans un quartier prisé de Salon de Provence, maison ancienne de 120 M² de 1963 de plain-pied offrant une belle pièce de vie lumineuse avec une cuisine à côté permettant ainsi d’ouvrir car le mur n’est pas porteur. \n" +
                 "Pour la partie « nuit », elle offre trois chambres ainsi qu’une salle de bains et un wc.\n" +
                 "Cette maison de bonne construction nécessitera néanmoins quelques travaux de remise aux normes concernant l’installation électrique ainsi que pour la mettre au goût du jour.\n" +
-                "Beau potentiel et beaucoup de cachet sur un terrain de 850 M²\n" +
-                "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
+                "Beau potentiel et beaucoup de cachet sur un terrain de 850 M²\n",
+
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
             reference: "0125",
             salleBain: 1,
             salleEau: 0,
@@ -176,7 +178,9 @@ exports.read = (id) => {
             terrain: 850,
             prix: "6 500 000",
             plus: ["piscine", "terasse", "belle vue", "calme"],
+            caracteristiques: ["Entrée", "1 salle de bain", "4 pièces", "3 chambres", "Plain-pied"],
             description: "A cinq minutes du centre ville d'Aix en Provence, très belle propriété de caractère en pierre de Bibemus d'une surface habitable de 270m2, posée sur un terrain de 3500m2 agrémenté de fontaines, d'arbres séculaires, une piscine avec un grand pool house aménagé de 70m2. La bâtisse dispose d'une belle réception avec cheminée, une cuisine entièrement équipée, 5 chambres avec salle de bains et salle d'eau et un bureau. Cette maison de Maître a su conserver le charme de l'ancien grâce à des matériaux de qualité et à son vécu.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
             reference: "MA-50-D",
             salleBain: 1,
             salleEau: 1,
@@ -185,7 +189,7 @@ exports.read = (id) => {
             date: "20220917",
             DPE: "60",
             GES: "15",
-            photos: ["../images/provence2.jpg", "../images/provence2noir.jpg"],
+            photos: ["../images/provence2.jpg", "../images/provence2noir.jpg", "../images/provence2.jpg"],
         }
     }
 };
