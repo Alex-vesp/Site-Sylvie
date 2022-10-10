@@ -309,10 +309,12 @@ app.get('/notreAgence.html', (req, res) => {
     res.render('notreAgence');
 });
 
+/**
 app.get('/location/:id', (req, res) => {
     var entry = model.read(req.params.id);
     res.render('detailLocation', (entry));
 });
+*/
 
 app.get('/achat/:id', (req, res) => {
     var entry = model.read(req.params.id);
