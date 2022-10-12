@@ -34,8 +34,13 @@
 
 
 <div id="detailAchat" style="font-family: Gotham, serif;">
+    <div>
+        <a onclick="history.back()" id="return" style="cursor: pointer; margin-left: 13%;">
+            < Retour à votre recherche
+        </a>
+    </div>
     <div class="row">
-        <div style="margin: 0 auto; width: 60%; max-height: 100%; max-width: 180rem ; ">
+        <div style="margin: 0 auto; width: 80%; max-height: 100%; max-width: 180rem ; ">
             <div style=" width: 100%">
                 <h4 style="float: left;  ">{{bien}} • {{lieu}}</h4>
                 <h3 style="float: right; ">{{prix}} €</h3>
@@ -111,26 +116,28 @@
         <div class="row" style="margin-left: 2%">
             <div class="col" style="display: inline-block;">
                 <h5 style="margin-bottom: 20px">Diagnostic de performance énergétique (DPE)</h5>
+                <p id="dpevalue" hidden>{{DPE}}</p>
                 <div id="dpe" >
                 </div>
             </div>
             <div class="col" style="display: inline-block;">
                 <h5 style="margin-bottom: 20px">Diagnostic de performance énergétique (DPE)</h5>
+                <p id="gesvalue" hidden>{{GES}}</p>
                 <div id="ges" >
                 </div>
             </div>
         </div>
         <script src="../javascript/dpeges.js"></script>
-        <script type="text/javascript">
+        <script>
             var dpe = new DpeGes();
             dpe.dpe({
-                domId: 'dpe',
-                value: 60,
+            domId: 'dpe',
+            value: parseInt(document.getElementById("dpevalue").innerText)
             });
             var ges = new DpeGes();
             ges.ges({
-                domId: 'ges',
-                value: 15
+            domId: 'ges',
+            value: parseInt(document.getElementById("gesvalue").innerText)
             });
         </script>
     </div>

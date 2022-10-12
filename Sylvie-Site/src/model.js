@@ -135,13 +135,12 @@ exports.read = (id) => {
         image: image,
         results : results,
     };*/
-    console.log(id);
-    if (id == 4){
+    if (id == 1){
         return {
             id: id,
             type: "achat",
             bien: "Maison ancienne à rénover",
-            lieu: "Salon de Provence",
+            lieu: "Salon-de-Provence",
             pieces: 4,
             chambres: 3,
             surface: 120,
@@ -164,6 +163,136 @@ exports.read = (id) => {
             DPE: "133",
             GES: "1",
             photos: ["../images/ACHAT1/1.webp", "../images/ACHAT1/2.webp", "../images/ACHAT1/3.webp", "../images/ACHAT1/4.webp", "../images/ACHAT1/5.webp", "../images/ACHAT1/6.webp","../images/ACHAT1/7.webp","../images/ACHAT1/8.webp"],
+        }
+    }
+    if (id == 2){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison/Appartement",
+            lieu: "Salon-de-Provence",
+            pieces: 5,
+            chambres: 4,
+            surface: 107,
+            terrain: 0,
+            prix: "307 000",
+            plus: ["Calme", "5 pièces", "Quartier prisé", "Place de parking", "Grand garage", "2 terrasses"],
+            caracteristiques: ["Entrée", "1 salle de bain", "1 salle d'eau", "5 pièces", "4 chambres", "2 étages", "Garage", "2 terrasses"],
+            description: "Coquette maison/ appartement rénovée avec goût offrant un séjour volumineux avec sa cuisine ouverte équipée ouverts sur deux terrasses à l'Est de 50 M² et à l'Ouest de 12M² ainsi qu’un bureau pouvant faire office de chambre pour le 1er niveau. En ce qui concerne le 2ème niveau, vous découvrirez trois chambres aux volumes généreux dont une dotée d'une salle d'eau, une salle de bains. Un grand garage complète ce bien situé en copropriété, ainsi qu'une place de parking.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
+            reference: "003",
+            salleBain: 1,
+            salleEau: 1,
+            chauffage: "",
+            annee: "",
+            date: "20220829",
+            DPE: "100",
+            GES: "3",
+            photos: ["../images/ACHAT2/1.jpg", "../images/ACHAT2/2.jpg", "../images/ACHAT2/3.jpg", "../images/ACHAT2/4.JPG", "../images/ACHAT2/5.JPG", "../images/ACHAT2/6.JPG","../images/ACHAT2/7.JPG","../images/ACHAT2/8.jpg", "../images/ACHAT2/9.JPG"],
+        }
+    }
+    if (id == 3){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Appartement",
+            lieu: "Lançon-Provence",
+            pieces: 5,
+            chambres: 3,
+            surface: 105,
+            terrain: 0,
+            prix: "840 000",
+            plus: ["Calme", "5 pièces", "Quartier prisé", "Grandes chambres", "Style Hongrois"],
+            caracteristiques: ["Entrée", "1 salle de bain", "4 pièces", "3 chambres", "Plain-pied"],
+            description: "Une adresse pour ce magnifique appartement Bourgeois du 18e siècle doté de parquet d’époque en point de Hongrie apportant un charme indéniable à ce bien d’exception. Dès votre entrée, vous serez transportés dans une autre époque en découvrant le salon et la salle à manger à l’atmosphère feutrée. A proximité, une cuisine aux volumes généreux mérite une rénovation pour lui redonner son charme d’antan. Trois belles chambres de 18 à 25 M² avec rangements et une salle de bains complètent ce bien.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
+            reference: "0125",
+            salleBain: 1,
+            salleEau: 0,
+            chauffage: "",
+            annee: "1948",
+            date: "20220616",
+            DPE: "228",
+            GES: "71",
+            photos: ["../images/ACHAT3/1.jpg", "../images/ACHAT3/2.jpg", "../images/ACHAT3/3.jpg", "../images/ACHAT3/4.jpg", "../images/ACHAT3/5.jpg", "../images/ACHAT3/6.jpg","../images/ACHAT3/7.jpg","../images/ACHAT3/8.jpg"],
+        }
+    }
+    if (id == 4){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Appartement",
+            lieu: "Lyon 9ème",
+            pieces: 3,
+            chambres: 2,
+            surface: 65,
+            terrain: 201,
+            prix: "337 000",
+            plus: ["3 pièces", "2 terrasses", "Grand jardin clos", "Grand garage"],
+            caracteristiques: ["1 salle de bain", "3 pièces", "2 chambres", "Plain-pied", "Rez de jardin", "2 terrasses", "Grand jardin"],
+            description: "Une adresse pour ce magnifique appartement Bourgeois du 18e siècle doté de parquet d’époque en point de Hongrie apportant un charme indéniable à ce bien d’exception. Dès votre entrée, vous serez transportés dans une autre époque en découvrant le salon et la salle à manger à l’atmosphère feutrée. A proximité, une cuisine aux volumes généreux mérite une rénovation pour lui redonner son charme d’antan. Trois belles chambres de 18 à 25 M² avec rangements et une salle de bains complètent ce bien.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
+            reference: "062",
+            salleBain: 1,
+            salleEau: 0,
+            chauffage: "individuel",
+            annee: "2017",
+            date: "20220616",
+            DPE: "133",
+            GES: "12",
+            photos: ["../images/ACHAT4/1.jpg", "../images/ACHAT4/2.jpg", "../images/ACHAT4/3.jpg", "../images/ACHAT4/4.JPG", "../images/ACHAT4/5.JPG", "../images/ACHAT4/6.JPG"],
+        }
+    }
+    if (id == 5){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison",
+            lieu: "Marseille 11ème",
+            pieces: 6,
+            chambres: 4,
+            surface: 140,
+            terrain: 650,
+            prix: "760 000",
+            plus: ["6 pièces", "Terrasse", "Cuisine équipée", "Atelier", "Grand garage"],
+            caracteristiques: ["1 salle de bain", "6 pièces", "3 chambres", "1 bureau", "Terrasse"],
+            description: "Marseille 11e, belle maison de 140 M² construite en 1990 sur un terrain de 650 M² offrant un séjour et une salle à manger avec accès sur la terrasse permettant de déjeuner au calme, une cuisine équipée, trois grandes chambres et un bureau, salle de bains. Un grand garage complète ce bien ainsi qu’un atelier pour bricoler.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché\n",
+            reference: "003",
+            salleBain: 1,
+            salleEau: 0,
+            chauffage: "",
+            annee: "1990",
+            date: "20220616",
+            DPE: "228",
+            GES: "71",
+            photos: ["../images/ACHAT5/1.jpg", "../images/ACHAT5/2.jpg", "../images/ACHAT5/3.jpg", "../images/ACHAT5/4.JPG", "../images/ACHAT5/5.JPG", "../images/ACHAT5/6.JPG"],
+        }
+    }
+    if (id == 6){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Appartement",
+            lieu: "Avignon",
+            pieces: 3,
+            chambres: 2,
+            surface: 65,
+            terrain: 0,
+            prix: "220 000",
+            plus: ["3 pièces", "Grand balcon", "Cuisine équipée", "Place parking"],
+            caracteristiques: ["1 salle de bain", "WC séparés", "2 chambres", "Grand balcon"],
+            description: "Bel appartement de Type 3 de 65 M² situé en périphérie d’Avignon offrant un grand séjour lumineux donnant sur un grand balcon avec une cuisine ouverte équipée, deux chambres avec placards, une salle de bains et un WC. Une place privative en sous-sol complète ce bien",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur = 5.3% du prix TTC affiché\n",
+            reference: "003",
+            salleBain: 1,
+            salleEau: 0,
+            chauffage: "",
+            annee: "",
+            date: "20220616",
+            DPE: "385",
+            GES: "12",
+            photos: ["../images/ACHAT6/1.jpg", "../images/ACHAT6/2.jpg", "../images/ACHAT6/3.jpg", "../images/ACHAT6/4.JPG", "../images/ACHAT6/5.JPG", "../images/ACHAT6/6.JPG"],
         }
     }
     else {

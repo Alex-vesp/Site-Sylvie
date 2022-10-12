@@ -309,6 +309,11 @@ async function validateFormContact() {
     await new Promise(r => setTimeout(r, 5000));
 }
 
+/**
+ * https://dashboard.emailjs.com/
+ *
+ */
+
 async function validateFormVente() {
     emailjs.init('0Hy-X1pZusrJjhO_I');
     var name = document.getElementById('name').value;
@@ -342,10 +347,6 @@ async function validateFormVente() {
         document.querySelector('.status').innerHTML = "Veuillez renseigner la surface du bien";
         return false;
     }
-    var prix = document.getElementById('prix').value;
-    if (prix == "") {
-        prix = "Non indiqué";
-    }
     var message = document.getElementById('message').value;
     if (message == "") {
         message = "Pas de message";
@@ -359,7 +360,6 @@ async function validateFormVente() {
         lieu,
         tel,
         message,
-        prix,
         surface
     }
     emailjs.send("service_r7fxoim", "template_t6zuzon", formData);
@@ -368,6 +368,3 @@ async function validateFormVente() {
     await new Promise(r => setTimeout(r, 5000));
 }
 
-$(document).on('click','.close',function(){
-    close();
-})
