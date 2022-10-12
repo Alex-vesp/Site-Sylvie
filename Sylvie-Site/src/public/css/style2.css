@@ -654,3 +654,8 @@ html::-webkit-scrollbar-thumb:hover {
     width: 30px;
     height: 48px;
 }
+
+#detailImages {
+    display: none;
+}
+

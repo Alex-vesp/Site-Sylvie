@@ -174,53 +174,6 @@ function faireDefilerCarouselArriere(id){
     else x.children.item(0).children.item(number-1).classList.add('active');
 }
 
-function showModal(photos){
-
-        var modal = document.getElementById("myModal");
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        modal.style.display = "block";
-    if (document.getElementById("a1").children.length <= 0) {
-        var photosList = photos.split(',');
-        let innervdiv = document.createElement("div");
-        innervdiv.className = "carousel-inner";
-        for (let i = 0; i < photosList.length; i++) {
-            let div = document.createElement("div");
-            if (i == 0) {
-                div.className = "carousel-item active";
-            } else div.className = "carousel-item";
-            let elem = document.createElement("img");
-            elem.src = photosList[i];
-            elem.style = 'width:auto; height: 25rem;object-fit: cover; margin-left: 40%;';
-            div.appendChild(elem)
-            innervdiv.appendChild(div)
-        }
-        modal.appendChild(innervdiv);
-        let flecheLeft = document.getElementById("a1");
-        let span1 = document.createElement("span");
-        span1.className = "carousel-control-prev-icon";
-        span1.ariaHidden = "true";
-        span1.style = "cursor: pointer; color:white";
-        let span2 = document.createElement("span");
-        span2.className = "sr-only";
-        span2.innerText = "Previous";
-        flecheLeft.appendChild(span1);
-        flecheLeft.appendChild(span2);
-        let span3 = document.createElement("span");
-        span3.className = "carousel-control-next-icon";
-        span3.ariaHidden = "true";
-        span3.style = "cursor: pointer; color:white";
-        let span4 = document.createElement("span");
-        span4.className = "sr-only";
-        span4.innerText = "Next";
-        let flechRight = document.getElementById("a2");
-        flechRight.appendChild(span3);
-        flechRight.appendChild(span4);
-        captionText.innerHTML = "Photos du bien selectionné";
-    }
-}
-
 function close(){
     var span = document.getElementsByClassName("close");
     var modal = document.getElementById("myModal");
@@ -368,3 +321,33 @@ async function validateFormVente() {
     await new Promise(r => setTimeout(r, 5000));
 }
 
+
+
+function openPictures(photos){
+    document.getElementById("detailImages").style.display = "block";
+    document.getElementById("detail").style.display = "none";
+    var images = document.getElementById("images").children;
+    if (images.length === 0){
+        var photosList = photos.split(',');
+        for (let i = 0; i < photosList.length; i++) {
+            let elem = document.createElement("img");
+            let div = document.createElement("div");
+            elem.src = photosList[i];
+            elem.style = 'width: 100%; object-fit: cover;" class="d-block w-100; margin-bottom : 3%;cursor:pointer;';
+            elem.setAttribute( "onClick", "javascript: openNewTab(src);");
+            //div.setAttribute('onclick', openNewTab(1));
+            document.getElementById("images").appendChild(elem)
+        }
+    }
+}
+
+
+
+function closePictures(){
+    document.getElementById("detailImages").style.display = "none";
+    document.getElementById("detail").style.display = "block";
+}
+
+function openNewTab(src){
+    window.open(src, '_blank');
+}
