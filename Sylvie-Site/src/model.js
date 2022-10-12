@@ -1,9 +1,9 @@
 "use strict"
 /* Module de recherche dans une base de données de films */
-const Sqlite = require('better-sqlite3');
-const fs = require("fs");
+//const Sqlite = require('better-sqlite3');
+let express = require('express');
 
-let db = new Sqlite('db.sqlite');
+//let db = new Sqlite('db.sqlite');
 /*
 exports.loadList = (id) => {
     let liste = db.prepare('SELECT nomListe FROM Liste WHERE idUtilisateur = ? ORDER BY nomListe').all(id);
