@@ -392,6 +392,6 @@ app.get('/deconnexion.html', (req, res) => {
 // Listen on the port from the Web PaaS configuration
 const port = 3000;
 
-//app.listen(port);
-app.listen(5000, () => console.log('listening on http://localhost:5000'));
+app.listen(port);
+//app.listen(5000, () => console.log('listening on http://localhost:5000'));
 

@@ -295,6 +295,62 @@ exports.read = (id) => {
             photos: ["../images/ACHAT6/1.jpg", "../images/ACHAT6/2.jpg", "../images/ACHAT6/3.jpg", "../images/ACHAT6/4.JPG", "../images/ACHAT6/5.JPG", "../images/ACHAT6/6.JPG"],
         }
     }
+    if (id == 7){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison",
+            lieu: "Miramas",
+            pieces: 7,
+            chambres: 3,
+            surface: 110,
+            terrain: 430,
+            prix: "303 000",
+            plus: ["7 pièces", "Terrain clos", "Grand séjour", "Cuisine indépendante"],
+            caracteristiques: ["1 salle d'eau'", "WC séparés", "3 chambres"],
+            description: "Maison de plain pied de 110 M² sur un terrain clos et arboré de 430 M² offrant un grand séjour donnant sur une véranda, une cuisine aménagée indépendante pouvant être reliée au séjour pour obtenir une belle pièce de vie, trois chambres à l'arrière et au calme, une salle d'eau, wc ainsi qu'une pièce indépendante.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur = 5.3% du prix TTC affiché\n",
+            reference: "003",
+            salleBain: 0,
+            salleEau: 1,
+            chauffage: "",
+            annee: "",
+            date: "20220616",
+            DPE: "151",
+            GES: "8",
+            photos: ["../images/ACHAT7/1.jpg", "../images/ACHAT7/2.jpg", "../images/ACHAT7/3.jpg", "../images/ACHAT7/4.jpg", "../images/ACHAT7/5.jpg"],
+        }
+    }
+    if (id == 8){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison",
+            lieu: "Cornillon Confoux",
+            pieces: 7,
+            chambres: 3,
+            surface: 137,
+            terrain: 9000,
+            prix: "732 000",
+            plus: ["Grand terrain", "Dépendance", "Grand garage"],
+            caracteristiques: ["Dépendance", "3 chambres"],
+            description: "Rare à la vente, en campagne, dans le village prisé de Cornillon Confoux, découvrez cette maison de plain-pied de 137 M² sur 9000 M² de terrain arboré avec forage.\n" +
+                "La maison divisée en deux logements se compose ainsi :\n" +
+                "La partie principale de 95 M² offre un séjour et une cuisine aménagée avec accès au garage de 37M² doté d’un cave de 24M², deux grandes chambres de 14 et 19M² et une salle de bain.\n" +
+                "Un T2 loué offre une rentabilité locative supplémentaire.\n" +
+                "Une dépendance de 70 M² avec un point d’eau permet de bricoler sans déranger.\n",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur = 5.3% du prix TTC affiché\n",
+            reference: "004",
+            salleBain: 2,
+            salleEau: 0,
+            chauffage: "",
+            annee: "",
+            date: "20220616",
+            DPE: "137",
+            GES: "5",
+            photos: ["../images/ACHAT8/1.jpg", "../images/ACHAT8/2.jpg", "../images/ACHAT8/3.jpg", "../images/ACHAT8/4.jpg", "../images/ACHAT8/5.jpg", "../images/ACHAT8/6.jpg"],
+        }
+    }
     else {
         return {
             id: id,
