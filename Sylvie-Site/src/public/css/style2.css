@@ -375,6 +375,9 @@ html::-webkit-scrollbar-thumb:hover {
     .nav-item {
         margin-right: 30px;
     }
+    .nav {
+        font-size: medium;
+    }
     #achatLoc {
         margin-right: 4% !important;
     }

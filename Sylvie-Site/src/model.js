@@ -318,7 +318,7 @@ exports.read = (id) => {
             date: "20220616",
             DPE: "151",
             GES: "8",
-            photos: ["../images/ACHAT7/1.jpg", "../images/ACHAT7/2.jpg", "../images/ACHAT7/3.jpg", "../images/ACHAT7/4.jpg", "../images/ACHAT7/5.jpg"],
+            photos: ["../images/ACHAT7/1.jpg", "../images/ACHAT7/2.jpg", "../images/ACHAT7/3.jpg", "../images/ACHAT7/4.jpg", "../images/ACHAT7/5.jpg", "../images/ACHAT7/6.jpg", "../images/ACHAT7/7.jpg", "../images/ACHAT7/8.jpg", "../images/ACHAT7/9.jpg", "../images/ACHAT7/10.jpg"],
         }
     }
     if (id == 8){
@@ -349,6 +349,65 @@ exports.read = (id) => {
             DPE: "137",
             GES: "5",
             photos: ["../images/ACHAT8/1.jpg", "../images/ACHAT8/2.jpg", "../images/ACHAT8/3.jpg", "../images/ACHAT8/4.jpg", "../images/ACHAT8/5.jpg", "../images/ACHAT8/6.jpg"],
+        }
+    }
+    if (id == 9){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Villa",
+            lieu: "Charleval",
+            pieces: 8,
+            chambres: 6,
+            surface: 235,
+            terrain: 2400,
+            prix: "735 000",
+            plus: ["Piscine", "Terasse", "Grand terrain", "Jacuzzi"],
+            caracteristiques: ["Piscine", "6 chambres"],
+            description: "Vous cherchez une grande villa au pied du Luberon, au calme, tout en étant proche du centre village, cette maison aux volumes généreux est faite pour vous.\n" +
+                "Au rez de chaussée, vous serez séduits par le volume de la pièce de vie et sa luminosité ainsi que par la générosité de la cuisine équipée. Vous découvrirez ensuite, la partie \"nuit\" dotée d'une chambre ainsi qu'une suite parentale avec accès direct sur le jardin arboré. Un cellier / buanderie ainsi qu'un wc complètent le rez de chaussée.\n" +
+                "A l'étage, vous serez charmés par la grande chambre de 40M² dotée d'un dressing avec accès direct sur la terrasse ainsi que les deux suites parentales de 20 M². L'étage est complété par une autre chambre avec accès sur la terrasse et par une salle d'eau indépendante ainsi qu'un wc.\n" +
+                "Cette villa est implantée sur une grand terrain arboré et clos avec forage de 2400 M² avec piscine et pool house. Un grand garage de 33M² et une pièce jacuzzi / sauna complète ce bien.\n" +
+                "Ce bien d'exception est présenté en exclusivité par Laetitia Collerie mandataire indépendant du réseau L'AGENCE DES MANDATAIRES inscrite au RSAC de Salon de Provence N° 897 682 407\n" +
+                "Plus de photos sur demande. A visiter rapidement.",
+            loi: "Informations Loi ALUR : Honoraires inclus à la charge du vendeur = 5.3% du prix TTC affiché\n",
+            reference: "005",
+            salleBain: 1,
+            salleEau: 1,
+            chauffage: "",
+            annee: "",
+            date: "20220523",
+            DPE: "100",
+            GES: "2",
+            photos: ["../images/ACHAT9/1.jpg", "../images/ACHAT9/2.jpg", "../images/ACHAT9/3.jpg", "../images/ACHAT9/4.jpg", "../images/ACHAT9/5.jpg", "../images/ACHAT9/6.jpg", "../images/ACHAT9/7.jpg", "../images/ACHAT9/8.jpg", "../images/ACHAT9/9.jpg"],
+        }
+    }
+    if (id == 10){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison",
+            lieu: "Charleval",
+            pieces: 3,
+            chambres: 2,
+            surface: 75,
+            terrain: 250,
+            prix: "289 000",
+            plus: ["Véranda", "Grand hall d'entrée", "Cuisine équipée"],
+            caracteristiques: ["Véranda", "2 chambres"],
+            description: "Seulement chez L'Agence des mandataires, Laetitia Collerie vous propose de visiter cette coquette maison de plain pied sur un terrain clos de 250 M², à deux pas du cœur du village.\n" +
+                "Vous accéderez à la maison par une spacieuse et lumineuse véranda de 30 M² où vous pourrez déjeuner en famille ou flâner l'hiver avec un bon livre.\n" +
+                "Un grand hall d'entrée dessert d'une part, la cuisine équipée avec son cellier, et d'autre part, le grand séjour de 25 M². Côté \"nuit\", vous découvrirez deux chambres calmes aux volumes généreux, ainsi que la salle d'eau.\n" +
+                "Prix tout doux, à visiter rapidement.",
+            reference: "008",
+            salleBain: 0,
+            salleEau: 1,
+            chauffage: "",
+            annee: "",
+            date: "20220523",
+            DPE: "250",
+            GES: "8",
+            photos: ["../images/ACHAT10/1.jpg", "../images/ACHAT10/2.jpg", "../images/ACHAT10/3.jpg", "../images/ACHAT10/4.jpg", "../images/ACHAT10/5.jpg"],
         }
     }
     else {

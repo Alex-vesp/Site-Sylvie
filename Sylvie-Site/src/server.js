@@ -325,6 +325,11 @@ app.get('/mentions.html', (req, res) => {
     res.render('mentions');
 });
 
+app.get('/recrutement.html', (req, res) => {
+    res.render('recrutement');
+});
+
+
 /*
 app.get('/pageConnexion.html', (req, res) => {
     res.render('pageConnexion');
