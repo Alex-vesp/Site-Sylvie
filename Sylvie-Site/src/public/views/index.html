@@ -39,14 +39,14 @@
                 <div class="form-group row" style="border-radius: 0;" >
                     <div class="flex-column" style="width: 43.5%; margin-left: 4%;">
                         <label style="; position: absolute;"  for="type"></label>
-                        <select id="type" class="form-control">
+                        <select id="type" style="transform: translate3d(0, 0, 0);" class="form-control">
                             <option>Achat</option>
                             <option>Location</option>
                         </select>
                     </div>
                     <div class="flex-column" style="width: 43.5%; margin-left: 5%; margin-right: 4%">
                         <label style="; position: absolute;" for="pays"></label>
-                        <select id="pays" class="form-control">
+                        <select id="pays" style="transform: translate3d(0, 0, 0);" class="form-control">
                             <option>France</option>
                             <option>Belgique</option>
                             <option>Suisse</option>
@@ -56,11 +56,11 @@
                 </div>
                 <div class="form-group" style="border-radius: 0">
                     <label for="localisation"></label>
-                    <input style="padding-left: 40px; border-radius: 0 ; background: url(../images/logoLocation.PNG)  white no-repeat scroll 5px -4px ;background-size: 32px;" type="text" id="localisation" class="form-control" placeholder="Ville, code postal, région ...">
+                    <input style="transform: translate3d(0, 0, 0); padding-left: 40px; border-radius: 0 ; background: url(../images/logoLocation.PNG)  white no-repeat scroll 5px -4px ;background-size: 32px;" type="text" id="localisation" class="form-control" placeholder="Ville, code postal, région ...">
                 </div>
                 <div class="form-group" style="border-radius: 0">
                     <label for="prix"></label>
-                    <input style="padding-left: 40px; border-radius: 0 ; background: url(../images/logoEuro.PNG)  white no-repeat scroll 7px 3px ;background-size: 30px;" type="text" id="prix" class="form-control" pattern="[0-9]+" placeholder="Prix maximum">
+                    <input style="transform: translate3d(0, 0, 0); padding-left: 40px; border-radius: 0 ; background: url(../images/logoEuro.PNG)  white no-repeat scroll 7px 3px ;background-size: 30px;" type="text" id="prix" class="form-control" pattern="[0-9]+" placeholder="Prix maximum">
                 </div>
                 <button type="submit" class="btn" style="text-align: center; border-radius: 20px ;margin-left: 7%; margin-top: 5%; width: 88%; background-color: #ba903b;font-family: gotham, serif;font-size: 16px;color: white">Rechercher</button>
             </form>
@@ -78,7 +78,7 @@
     </div>
 
 </div>
-
+<div id="biens">
 <h1 class="vedette" style="text-align: center;font-family: Gotham, serif !important;">Nos coups de coeur du moment</h1>
 <div class="trait1"></div>
 <div class="trait2"></div>
@@ -309,6 +309,7 @@
 </div>
 <div style="margin-bottom: 8rem">
 
+</div>
 </div>
 </body>
 

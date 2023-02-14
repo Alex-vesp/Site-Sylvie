@@ -6,6 +6,7 @@ const crypto = require('crypto');
 
 
 var model = require('./model');
+var js = require('./public/javascript/javascript');
 var app = express();
 var Authentificated = false;
 
@@ -397,6 +398,6 @@ app.get('/deconnexion.html', (req, res) => {
 // Listen on the port from the Web PaaS configuration
 const port = 3000;
 
-app.listen(port);
+app.listen(port, () => console.log('listening on http://localhost:'+port));
 //app.listen(5000, () => console.log('listening on http://localhost:5000'));
 

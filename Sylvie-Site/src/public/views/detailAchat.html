@@ -3,150 +3,180 @@
 
 <head>
     <title>Agence des mandataires</title>
-    <link rel="icon" type="image/png" sizes="32x32"  href="../images/favicon.png">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
     <script src="http://code.jquery.com/jquery-3.4.0.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="../css/style2.css" rel="stylesheet" />
-    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="../css/style2.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
     <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic"
+          rel="stylesheet" type="text/css"/>
     <script src="../javascript/javascript.js"></script>
 
 
-
-
 </head>
-<body>
+<body onload="detailAchat()">
 
 
 {{> header}}
-<div id="detailImages" style="font-family: Gotham, serif;">
-    <div style="margin-bottom: 2%;">
-        <a onclick="closePictures()" id="returnPage" style="cursor: pointer; margin-left: 87%; position: fixed; color: #ba903b; font-size: x-large">
-            X Fermer
-        </a>
-        <a onclick="closePictures()" id="returnPage2" style="cursor: pointer; display: flex; margin-left: 10%; margin-top: 10px; font-size: large ">
-            < Retourner au bien
-        </a>
-    </div>
-    <div style="margin: 0 auto; width: 60%; max-height: 100%; max-width: 180rem ;" id="images">
-
-    </div>
-</div>
-
-<div id="detail">
-    <div id="detailAchat" style="font-family: Gotham, serif;">
-        <div>
-            <a onclick="history.back()" id="return" style="cursor: pointer; margin-left: 13%;">
-                < Retour à votre recherche
+<div id="detailPageAchat">
+    <div id="detailImages" style="font-family: Gotham, serif;">
+        <div style="margin-bottom: 2%;">
+            <a onclick="closePictures()" id="returnPage"
+               style="cursor: pointer; margin-left: 87%; position: fixed; color: #ba903b; font-size: x-large">
+                X Fermer
+            </a>
+            <a onclick="closePictures()" id="returnPage2"
+               style="cursor: pointer; display: flex; margin-left: 10%; margin-top: 10px; font-size: large ">
+                < Retourner au bien
             </a>
         </div>
-        <div class="row">
-            <div style="margin: 0 auto; width: 80%; max-height: 100%; max-width: 180rem ; ">
-                <div style=" width: 100%">
-                    <h4 style="float: left;  ">{{bien}} • {{lieu}}</h4>
-                    <h3 style="float: right; ">{{prix}} €</h3>
-                </div>
-                <div style=" width: 100%;display: flex; margin-bottom: 2%; ">
-                    <h6 style="float: left">{{pieces}} Pièces • {{chambres}} Chambres • Surface de {{surface}} m²</h6>
-                </div>
-                <div  onclick="openPictures('{{photos}}')" style="display: flex;cursor: pointer;"> <!--onclick="showPictures()" "-->
-                    <div style="width: 70%; height: 40rem;display: inline-block;">
-                        <img style="width:auto; height: 40rem;object-fit: cover;" class="d-block w-100" src="{{photos.0}}" alt="First slide">
-                    </div>
-                    <div style="width: 30%; height: 40rem;display: inline-block; padding-left: 2px">
-                        <div style="height: 20rem; ">
-                            <img style="width:auto; height: calc(20rem - 0.03rem);object-fit: cover;" class="d-block w-100" src="{{photos.1}}" alt="First slide">
-                        </div>
-                        <div style="height: 20rem;padding-top: 0.03rem">
-                            <img style="width:auto; height: calc(20rem - 0.03rem);object-fit: cover;" class="d-block w-100" src="{{photos.2}}" alt="First slide">
-                        </div>
-                    </div>
-                </div>
-                </div>
+        <div style="margin: 0 auto; width: 60%; max-height: 100%; max-width: 180rem ;" id="images">
+
         </div>
     </div>
 
-    <div>
-        <div style="width: 100%;  padding-left: 30px; position: relative; display: block ; ">
-            <div style="margin-left: 10%; width: 80% ; max-width: 150rem; height: auto; margin-bottom: 1rem;font-size: 1rem;word-wrap: break-word;display: -webkit-box;-webkit-box-orient: vertical;">
-                {{description}}
+    <div id="detail">
+        <div id="detailAchat" style="font-family: Gotham, serif;">
+            <div style="margin-top: 1.5rem">
+                <a onclick="history.back()" id="return" style="cursor: pointer; margin-left: 13%;">
+                    < Retour à votre recherche
+                </a>
             </div>
-            <div style="margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 1rem;  font-size: 1rem;word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 5;-webkit-box-orient: vertical;">
-                {{loi}}
-            </div>
-        </div>
-        <br/>
-        <br/>
-        <div style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 3%">
-            <h5 style="margin-bottom: 15px">Caractéristiques générales</h5>
-            <ul style="padding-left: 5px; display: flex; position: relative; width: 100%;">
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{plus.0}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{plus.1}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{plus.2}}</li>
-            </ul>
-            <ul style="padding-left: 5px; display: flex; position: relative; width: 100%">
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{plus.3}}</li>
-            </ul>
-        </div>
-        <div style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem;  margin-bottom: 3%;">
-            <h5 style="margin-bottom: 15px">Aménagements du bien</h5>
-            <ul style="padding-left: 5px; display: flex; position: relative; width: 100%">
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.0}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.1}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.2}}</li>
-            </ul>
-            <ul style="padding-left: 5px; display: flex; position: relative; width: 100%">
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.3}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.4}}</li>
-                <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); "> {{caracteristiques.5}}</li>
-            </ul>
-        </div>
-        <div style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 8%">
-            <h5 style="margin-bottom: 25px">Les diagnostiques énergétiques</h5>
-            <div class="row" style="margin-left: 2%">
-                <div class="col" style="display: inline-block;">
-                    <h5 style="margin-bottom: 20px">Diagnostic de performance énergétique (DPE)</h5>
-                    <p id="dpevalue" hidden>{{DPE}}</p>
-                    <div id="dpe" >
+            <div class="row">
+                <div id="enteteAchat" style="margin: 0 auto; width: 80%; max-height: 100%; max-width: 180rem ; ">
+                    <div style=" width: 100%">
+                        <h4 style="float: left;  ">{{bien}} • {{lieu}}</h4>
+                        <h3 style="float: right; ">{{prix}} €</h3>
                     </div>
-                </div>
-                <div class="col" style="display: inline-block;">
-                    <h5 style="margin-bottom: 20px">Emissions de Gaz à Effet de Serre (GES)</h5>
-                    <p id="gesvalue" hidden>{{GES}}</p>
-                    <div id="ges" >
+                    <div style=" width: 100%;display: flex; margin-bottom: 2%; ">
+                        <h6 style="float: left">{{pieces}} Pièces • {{chambres}} Chambres • Surface de {{surface}}
+                            m²</h6>
+                    </div>
+                    <div onclick="openPictures('{{photos}}')" style="display: flex;cursor: pointer;">
+                        <!--onclick="showPictures()" "-->
+                        <div id="imagesBlock1" style="width: 70%; height: 40rem;display: inline-block;">
+                            <img style="width:auto; height: 40rem;object-fit: cover;" class="d-block w-100"
+                                 src="{{photos.0}}" alt="First slide">
+                        </div>
+                        <div id="imagesBlock2" style="width: 30%; height: 40rem;display: inline-block; padding-left: 2px">
+                            <div style="height: 20rem; ">
+                                <img style="width:auto; height: calc(20rem - 0.03rem);object-fit: cover;"
+                                     class="d-block w-100" src="{{photos.1}}" alt="First slide">
+                            </div>
+                            <div style="height: 20rem;padding-top: 0.03rem">
+                                <img style="width:auto; height: calc(20rem - 0.03rem);object-fit: cover;"
+                                     class="d-block w-100" src="{{photos.2}}" alt="First slide">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <script src="../javascript/dpeges.js"></script>
-            <script>
-                var dpe = new DpeGes();
-                dpe.dpe({
-                domId: 'dpe',
-                value: parseInt(document.getElementById("dpevalue").innerText)
-                });
-                var ges = new DpeGes();
-                ges.ges({
-                domId: 'ges',
-                value: parseInt(document.getElementById("gesvalue").innerText)
-                });
-            </script>
         </div>
-        <div style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 10%; font-size: x-large;">
-            <h3 style="margin-bottom: 15px">Demande d'informations sur le bien</h3>
-            <p>Vous souhaitez en savoir plus sur le bien ?
-            <a style="color: #dc8100; text-decoration: none;" href="/contact.html">Contactez-nous</a>
-            </p>
+
+        <div>
+            <div style="width: 100%;  position: relative; display: block ; ">
+                <div id="descriptionAchat" style="margin-left: 10%; width: 80% ; max-width: 150rem; height: auto; margin-bottom: 1rem;font-size: 1rem;word-wrap: break-word;display: -webkit-box;-webkit-box-orient: vertical;">
+                    {{description}}
+                </div>
+                <div id="loiAchat" style="margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 1rem;  font-size: 1rem;word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 5;-webkit-box-orient: vertical;">
+                    {{loi}}
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div id="caracteristiquesAchat" style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 3%">
+                <h5 style="margin-bottom: 15px">Caractéristiques générales</h5>
+                <ul id="listeCaracteristiqueAchat" style="padding-left: 5px; display: flex; position: relative; width: 100%;">
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{plus.0}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{plus.1}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{plus.2}}
+                    </li>
+                </ul>
+                <ul style="padding-left: 5px; display: flex; position: relative; width: 100%">
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{plus.3}}
+                    </li>
+                </ul>
+            </div>
+            <div id="amenagementsAchat" style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem;  margin-bottom: 3%;">
+                <h5 style="margin-bottom: 15px">Aménagements du bien</h5>
+                <ul id="listeAmenagementAchat" style="padding-left: 5px; display: flex; position: relative; width: 100%">
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.0}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.1}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.2}}
+                    </li>
+                </ul>
+                <ul style="padding-left: 5px; display: flex; position: relative; width: 100%">
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.3}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.4}}
+                    </li>
+                    <li style="line-height: 2.3rem; width: calc(100% / 3); min-width: 20rem; list-style-type: none; font-size: larger; color: rgba(0,0,0,0.6); ">
+                        {{caracteristiques.5}}
+                    </li>
+                </ul>
+            </div>
+            <div id="diagnostiquesAchat" style="padding-left: 30px;margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 8%">
+                <h5 style="margin-bottom: 25px">Les diagnostiques énergétiques</h5>
+                <div class="row" style="margin-left: 2%">
+                    <div class="col" style="display: inline-block;">
+                        <h5 style="margin-bottom: 20px">Diagnostic de performance énergétique (DPE)</h5>
+                        <p id="dpevalue" hidden>{{DPE}}</p>
+                        <div id="dpe">
+                        </div>
+                    </div>
+                    <div class="col" style="display: inline-block;">
+                        <h5 style="margin-bottom: 20px">Emissions de Gaz à Effet de Serre (GES)</h5>
+                        <p id="gesvalue" hidden>{{GES}}</p>
+                        <div id="ges">
+                        </div>
+                    </div>
+                </div>
+                <script src="../javascript/dpeges.js"></script>
+                <script>
+                    var dpe = new DpeGes();
+                    dpe.dpe({
+                        domId: 'dpe',
+                        value: parseInt(document.getElementById("dpevalue").innerText)
+                    });
+                    var ges = new DpeGes();
+                    ges.ges({
+                        domId: 'ges',
+                        value: parseInt(document.getElementById("gesvalue").innerText)
+                    });
+                </script>
+            </div>
+            <div style="margin-left: 10%; width: 80% ; max-width: 150rem; margin-bottom: 10%; font-size: x-large;">
+                <h3 style="margin-bottom: 15px">Demande d'informations sur le bien</h3>
+                <p>Vous souhaitez en savoir plus sur le bien ?
+                    <a style="color: #dc8100; text-decoration: none;" href="/contact.html">Contactez-nous</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,7 @@
+{
+  "name": ".idea",
+  "version": "1.0.0",
+  "dependencies": {
+    "platformsh-config": "^2.4.1"
+  }
+}

@@ -120,6 +120,7 @@ function toggleMobileMenu(menu) {
         x.style.display = "block";
     } else  if (x != null){
         x.style.display = "none";
+        document.getElementById("biens").style.display = "none";
     }
     if (achat != null && achat.style.display === "none") {
         achat.style.display = "block";
@@ -132,6 +133,69 @@ function toggleMobileMenu(menu) {
     else {
         footer.style.display = "none";
     }
+    if (document.getElementById("notreAgence") != null){
+        if(document.getElementById("notreAgence").style.display === "none") {
+            document.getElementById("notreAgence").style.display = "block";
+        }
+        else {
+            document.getElementById("notreAgence").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("achat") != null){
+        if(document.getElementById("achat").style.display === "none") {
+            document.getElementById("achat").style.display = "block";
+        }
+        else {
+            document.getElementById("achat").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("vendre") != null){
+        if(document.getElementById("vendre").style.display === "none") {
+            document.getElementById("vendre").style.display = "block";
+        }
+        else {
+            document.getElementById("vendre").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("recrutement") != null){
+        if(document.getElementById("recrutement").style.display === "none") {
+            document.getElementById("recrutement").style.display = "block";
+        }
+        else {
+            document.getElementById("recrutement").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("contact") != null){
+        if(document.getElementById("contact").style.display === "none") {
+            document.getElementById("contact").style.display = "block";
+        }
+        else {
+            document.getElementById("contact").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("mention") != null){
+        if(document.getElementById("mention").style.display === "none") {
+            document.getElementById("mention").style.display = "block";
+        }
+        else {
+            document.getElementById("mention").style.display = "none";
+        }
+    }
+
+    if (document.getElementById("detailPageAchat") != null){
+        if(document.getElementById("detailPageAchat").style.display === "none") {
+            document.getElementById("detailPageAchat").style.display = "block";
+        }
+        else {
+            document.getElementById("detailPageAchat").style.display = "none";
+        }
+    }
+
 }
 
 function faireDefilerCarouselAvant(id){
@@ -350,4 +414,98 @@ function closePictures(){
 
 function openNewTab(src){
     window.open(src, '_blank');
+}
+
+
+function achatWidth(){
+    if (window.screen.width < 1200 ) {
+        console.log(navigator.userAgent.toLowerCase())
+        x = document.getElementById("resultatsAchat");
+        if (x != null){
+            let children = x.children;
+            for (let i=0 ; i < children.length ; i++){
+                children[i].children[0].style.width = "100%";
+                children[i].children[0].children[0].style.width = "50%";
+                children[i].children[0].children[1].style.width = "50%";
+                children[i].children[0].children[1].style.height = "18rem";
+                children[i].children[0].children[0].style.height = "18rem";
+                children[i].children[0].children[1].children[0].style.paddingLeft = "5px";
+                children[i].children[0].children[1].children[0].children[0].style.fontSize = "1rem";
+                children[i].children[0].children[1].children[0].children[1].style.fontSize = "0.8rem";
+                children[i].children[0].children[1].children[0].children[2].style.fontSize = "1rem";
+                children[i].children[0].children[1].children[0].children[3].style.fontSize = "1rem";
+                children[i].children[0].children[1].children[0].children[4].style.fontSize = "0.6rem";
+                children[i].children[0].children[1].children[0].children[4].style.width = "40%";
+                if (navigator.userAgent.toLowerCase().indexOf("safari") && navigator.userAgent.toLowerCase().indexOf("apple")){
+                    children[i].children[0].children[1].children[0].children[4].style = "margin-bottom: 1rem;font-size: 1rem;word-wrap: break-word;width: 40%;overflow: hidden;max-height: 7.5em;line-height: 1.5em;"
+                }
+                let images = children[i].children[0].children[0].children[0]
+                for (let j=0 ; j < images.children.length ; j++){
+                    images.children[j].children[0].style.height = "18rem";
+                }
+            }
+        }
+    }
+}
+
+function recrutementWidth(){
+    if (window.screen.width < 1200 ) {
+        document.getElementById("blockRecrutement").style.marginLeft = "-10%";
+        document.getElementById("blockRecrutement").style.marginRight = "10%";
+        document.getElementById("titreRecrutement").style.marginLeft = "-5%";
+        document.getElementById("imageRecrutement").style.marginLeft = "-5%";
+    }
+}
+
+function vendreWidth(){
+    if (window.screen.width < 1200 ) {
+        document.getElementById("titreVendre").style.marginLeft = "-10%";
+    }
+}
+
+function contactWidth(){
+    if (window.screen.width < 1200 ) {
+        document.getElementById("titreContact").style.marginLeft = "-10%";
+    }
+}
+
+function mentionWidth(){
+    if (window.screen.width < 1200 ) {
+        document.getElementById("mentionTitre").style.marginLeft = "-10%";
+    }
+}
+
+function detailAchat(){
+    if (window.screen.width < 1200 ) {
+        document.getElementById("enteteAchat").style.width = "90%";
+        document.getElementById("images").style.width = "90%";
+        document.getElementById("returnPage").innerText = "X";
+        document.getElementById("imagesBlock1").style.height = "20rem";
+        document.getElementById("imagesBlock2").style.height = "20rem";
+        document.getElementById("imagesBlock1").children[0].style.height = "20rem";
+        document.getElementById("imagesBlock2").children[0].children[0].style.height = "10rem";
+        document.getElementById("imagesBlock2").children[1].children[0].style.height = "10rem";
+        document.getElementById("imagesBlock2").children[0].style.height = "10rem";
+        document.getElementById("imagesBlock2").children[0].style.height = "10rem";
+        document.getElementById("descriptionAchat").style.width = "90%";
+        document.getElementById("descriptionAchat").style.marginLeft = "5%";
+        document.getElementById("loiAchat").style.width = "90%";
+        document.getElementById("loiAchat").style.marginLeft = "5%";
+        document.getElementById("caracteristiquesAchat").style.width = "85%";
+        document.getElementById("caracteristiquesAchat").style.paddingLeft = "0";
+        document.getElementById("caracteristiquesAchat").style.marginLeft = "7.5%";
+        document.getElementById("listeCaracteristiqueAchat").style.display = "block";
+        document.getElementById("listeCaracteristiqueAchat").style.marginBottom = "0";
+        document.getElementById("listeCaracteristiqueAchat").nextElementSibling.style.display = "block";
+        document.getElementById("listeAmenagementAchat").style.display = "block";
+        document.getElementById("listeAmenagementAchat").style.marginBottom = "0";
+        document.getElementById("listeAmenagementAchat").nextElementSibling.style.display = "block";
+        document.getElementById("amenagementsAchat").style.width = "85%";
+        document.getElementById("amenagementsAchat").style.paddingLeft = "0";
+        document.getElementById("amenagementsAchat").style.marginLeft = "7.5%";
+        document.getElementById("diagnostiquesAchat").style.marginTop = "10%";
+        document.getElementById("diagnostiquesAchat").style.width = "85%";
+        document.getElementById("diagnostiquesAchat").style.paddingLeft = "0";
+        document.getElementById("diagnostiquesAchat").style.marginLeft = "7.5%";
+    }
 }
