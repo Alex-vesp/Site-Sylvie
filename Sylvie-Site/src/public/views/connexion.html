@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Agence des mandataires</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <script src="http://code.jquery.com/jquery-3.4.0.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="../css/style2.css" rel="stylesheet"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic"
+          rel="stylesheet" type="text/css"/>
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/database.js"></script>
+    <style media="screen">
+        form{
+            margin-top: 2%;
+            height: 80%;
+            width: 30%;
+            background-color: rgba(255,255,255,0.13);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            padding: 50px 35px;
+            margin-left: 35%;
+        }
+        form *{
+            font-family: 'Poppins',sans-serif;
+            color: rgba(8,7,16,0.6);;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h3{
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+
+        label{
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        ::placeholder{
+            color: #e5e5e5;
+        }
+        button{
+            margin-top: 50px;
+            width: 100%;
+            background-color:  #e5e5e5;
+            color: rgba(0,0,0,.5);
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body onload="displayMessageForm()">
+
+{{> header}}
+<div id="pageConnexion">
+    <form action="/login" method="post">
+        <div hidden class="alert alert-danger" role="alert" id="loginAlert">
+            <p style="text-align: center;">Mauvaise combinaison Utilisateur / MDP</p>
+        </div>
+        <h3>Connexion</h3>
+
+        <label for="username">Utilisateur</label>
+        <input name="username" type="text" placeholder="Nom d'utilisateur" id="username">
+
+        <label for="password">Mot de passe</label>
+        <input name="password" type="password" placeholder="xxxxxxxx" id="password">
+
+        <button type="submit">Se connecter</button>
+    </form>
+</div>
+{{> footer}}
+</body>
+</html>

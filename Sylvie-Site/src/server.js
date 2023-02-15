@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
 
 
 /** POST **/
-
+/*
 app.post('/pageListe.html', (req, res) =>{
     if (req.body.ajoutListe.length === 0){
         res.status(401).send('Veuillez renseigner au moins un caractère dans le nom de la liste');
@@ -121,7 +121,7 @@ app.post('/index.html', (req, res) =>{
     let results = model.searchFilms(finalListe);
     res.render('indexTri', (results));
 });
-
+*/
 app.post('/achat', (req, res) => {
     res.redirect('achat.html');
 });
@@ -137,19 +137,20 @@ app.get('/contact.html', (req, res) => {
 
 
 
-/*
+
 app.post('/login', (req, res) => {
-    const user = model.login(req.body.user, getHashedPassword(req.body.password));
+    const user = model.login(req.body.username, getHashedPassword(req.body.password));
     if(user !== -1) {
-        req.session.user = user;
-        req.session.name = req.body.user;
-        req.session.mdp = getHashedPassword(req.body.password);
+        /*req.session.username = user;
+        req.session.name = req.body.username;
+        req.session.mdp = getHashedPassword(req.body.password);*/
         res.redirect('index.html');
     } else {
-        res.redirect('/pageConnexion.html');
+        res.render('connexion.html');
     }
 });
 
+/*
 app.post('/pageAjouterFilm.html', (req, res) => {
     let image;
     if(req.body.image === ""){
@@ -329,6 +330,11 @@ app.get('/mentions.html', (req, res) => {
 app.get('/recrutement.html', (req, res) => {
     res.render('recrutement');
 });
+
+app.get('/connexion.html', (req, res) => {
+    res.render('connexion');
+});
+
 
 
 /*

@@ -1,9 +1,9 @@
 "use strict"
 /* Module de recherche dans une base de données de films */
-//const Sqlite = require('better-sqlite3');
+const Sqlite = require('better-sqlite3');
 let express = require('express');
 
-//let db = new Sqlite('db.sqlite');
+let db = new Sqlite('db.sqlite');
 /*
 exports.loadList = (id) => {
     let liste = db.prepare('SELECT nomListe FROM Liste WHERE idUtilisateur = ? ORDER BY nomListe').all(id);
@@ -654,13 +654,13 @@ exports.ajouter = function(listeActeurs, listeRealisateurs, listeGenres, idFilm)
         db.prepare('INSERT INTO Genre (idFilm, nomGenre) VALUES (?, ?)').run(idFilm, listeGenres[i].toUpperCase());
     }
 }
-
+*/
 exports.login = function(user, password) {
-    var result = db.prepare('SELECT idUtilisateur FROM Utilisateur WHERE pseudoUtilisateur = ? AND mdpUtilisateur = ?').get(user, password);
+    var result = db.prepare('SELECT Utilisateur FROM Utilisateur WHERE Utilisateur = ? AND Password = ?').get(user, password);
     if(result === undefined) return -1;
-    return result.idUtilisateur;
+    return result.Utilisateur;
 }
-
+/*
 exports.new_user = function(user, mail, password, nom, prenom, date, genre, acteur, realisateur) {
 
     let today = new Date();

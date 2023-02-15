@@ -73,43 +73,6 @@ function openFilmIndiv(){/*
     document.getElementById("myFormInscr").hidden = true;*/
 }
 
-function userGetConnected(){
-    document.getElementById("liste").hidden = false;
-    document.getElementById("suggestions").hidden = false;
-    document.getElementById("profil").hidden = false;
-    document.getElementById("tri").hidden = false;
-    document.getElementById("film").hidden = false;
-    document.getElementById("deconnection").hidden = false;
-    document.getElementById("inscription").hidden = true;
-    document.getElementById("connection").hidden = true;
-    document.getElementById("listes").hidden = true;
-    document.getElementById("suggestion").hidden = true;
-    document.getElementById("myFormInscr").hidden = true;
-    document.getElementById("filmIndividuel").hidden = true;
-}
-
-function userGetDisconnected(){
-    document.getElementById("film").hidden = false;
-    document.getElementById("inscription").hidden = false;
-    document.getElementById("connection").hidden = false;
-    document.getElementById("deconnection").hidden = true;
-    document.getElementById("liste").hidden = true;
-    document.getElementById("suggestions").hidden = true;
-    document.getElementById("profil").hidden = true;
-    document.getElementById("tri").hidden = true;
-    document.getElementById("listes").hidden = true;
-    document.getElementById("suggestion").hidden = true;
-    document.getElementById("myFormInscr").hidden = true;
-    document.getElementById("filmIndividuel").hidden = true;
-}
-
-function validateFormAccueil(){
-    console.log("formulaire validé");
-}
-
-function validateFormAchat(){
-    console.log("formulaire validé");
-}
 
 function toggleMobileMenu(menu) {
     menu.classList.toggle('open');
@@ -507,5 +470,13 @@ function detailAchat(){
         document.getElementById("diagnostiquesAchat").style.width = "85%";
         document.getElementById("diagnostiquesAchat").style.paddingLeft = "0";
         document.getElementById("diagnostiquesAchat").style.marginLeft = "7.5%";
+    }
+}
+
+function displayMessageForm(){
+    const url = window.location.href
+    const last = url.split("/")[url.split("/").length-1]
+    if(last != undefined && last !== "connexion.html") {
+        document.getElementById("loginAlert").hidden = false;
     }
 }
