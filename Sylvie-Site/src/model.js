@@ -820,8 +820,13 @@ exports.getBien = (id) => {
 }
 
 exports.getBienAll = (id) => {
-    let selected = db.prepare('SELECT * FROM Bien where id=?').all(id);
-    return selected[0];
+    let infos = db.prepare('SELECT * FROM Bien where id=?').all(id);
+    for (var i = 0; i < infos.length; i++) {
+        infos[i].images = infos[i].images.split(',');
+        infos[i].Caracteristiques = infos[i].Caracteristiques.split(',');
+        infos[i].Plus = infos[i].Plus.split(',');
+    }
+    return infos[0];
 }
 
 exports.deleteBien = (id) => {

@@ -453,6 +453,26 @@ function openPictures(photos){
     }
 }
 
+function openPicturesBD(photos, id){
+    document.getElementById("detailImages").style.display = "block";
+    document.getElementById("detail").style.display = "none";
+    var images = document.getElementById("images").children;
+    if (images.length === 0){
+        var photosList = photos.split(',');
+        console.log(photosList)
+        console.log(photos)
+        for (let i = 0; i < photosList.length; i++) {
+            let elem = document.createElement("img");
+            let div = document.createElement("div");
+            elem.src = "../images/"+id+"ACHAT/"+photosList[i];
+            elem.style = 'width: 100%; object-fit: cover;" class="d-block w-100; margin-bottom : 3%;cursor:pointer;';
+            elem.setAttribute( "onClick", "javascript: openNewTab(src);");
+            //div.setAttribute('onclick', openNewTab(1));
+            document.getElementById("images").appendChild(elem)
+        }
+    }
+}
+
 
 
 function closePictures(){

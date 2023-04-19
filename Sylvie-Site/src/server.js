@@ -417,7 +417,9 @@ app.get('/location/:id', (req, res) => {
 */
 
 app.get('/achat/:id', (req, res) => {
-    var entry = model.read(req.params.id);
+    //var entry = model.read(req.params.id);
+    var entry = model.getBienAll(req.params.id);
+    console.log(entry);
     res.render('detailAchat', (entry));
 });
 
@@ -474,7 +476,6 @@ app.get('/signout.html', (req, res) => {
 
 app.get('/modifier.html/:id', (req, res) => {
     let param = model.getBienAll(req.params.id);
-    console.log(param)
     res.render('modifier.html', (param));
 });
 
