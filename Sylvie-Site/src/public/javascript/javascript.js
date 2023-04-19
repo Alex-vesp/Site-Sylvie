@@ -480,3 +480,54 @@ function displayMessageForm(){
         document.getElementById("loginAlert").hidden = false;
     }
 }
+
+function displayMessageFormCreate(){
+    const url = window.location.href
+    const last = url.split("/")[url.split("/").length-1]
+    if(last != undefined && last !== "creation.html") {
+        document.getElementById("loginAlert").hidden = false;
+    }
+}
+
+async function validateFormContact() {
+    var name = document.getElementById('name').value;
+    if (name == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner votre nom";
+        return false;
+    }
+    var email = document.getElementById('email').value;
+    if (email == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner votre adresse email";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(email)) {
+            document.querySelector('.status').innerHTML = "Format de l'adresse email incorrect";
+            return false;
+        }
+    }
+    var subject = document.getElementById('subject').value;
+    if (subject == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner un sujet";
+        return false;
+    }
+    var message = document.getElementById('message').value;
+    if (message == "") {
+        document.querySelector('.status').innerHTML = "Veuillez renseigner un message";
+        return false;
+    }
+    var tel = document.getElementById('tel').value;
+    document.querySelector('.status').innerHTML = "Envoie en cours...";
+    var formData = {
+        name,
+        email,
+        subject,
+        message,
+        tel
+    }
+    emailjs.send("service_r7fxoim", "template_a51ugy3", formData);
+    await new Promise(r => setTimeout(r, 2000));
+    document.querySelector('.status').innerHTML = "Votre demande de contact a été envoyée avec succès...";
+    await new Promise(r => setTimeout(r, 5000));
+
+}

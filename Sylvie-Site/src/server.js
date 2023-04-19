@@ -3,6 +3,10 @@
 let express = require('express');
 let mustache = require('mustache-express');
 const crypto = require('crypto');
+const multer = require('multer');
+const fs = require('fs')
+
+
 
 
 var model = require('./model');
@@ -18,7 +22,6 @@ const path = require("path");
 app.use(cookieSession({
     secret: 'mot-de-passe-du-cookie',
 }));
-
 const getHashedPassword = (password) => {
     const sha256 = crypto.createHash('sha256');
     const hash = sha256.update(password).digest('base64');
@@ -31,6 +34,7 @@ app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', 'public/views');
 app.set('model', 'model');
+
 
 
 app.use(function(req, res, next) {
@@ -141,14 +145,107 @@ app.get('/contact.html', (req, res) => {
 app.post('/login', (req, res) => {
     const user = model.login(req.body.username, getHashedPassword(req.body.password));
     if(user !== -1) {
-        /*req.session.username = user;
-        req.session.name = req.body.username;
-        req.session.mdp = getHashedPassword(req.body.password);*/
-        res.redirect('index.html');
+        req.session.user = user[0];
+        req.session.name = req.body.user;
+        req.session.id = user[1];
+        res.redirect('gestion.html');
     } else {
         res.render('connexion.html');
     }
 });
+
+app.post('/signin', (req, res) => {
+    const user = model.login(req.body.username, getHashedPassword(req.body.password));
+    let ok = model.addNewUser(req.body.email, req.body.username, getHashedPassword(req.body.password));
+    console.log(ok)
+    if(ok > 0) {
+        res.redirect('gestion.html');
+    } else {
+        res.render('creation.html');
+    }
+});
+
+app.post('/delete/:id', (req, res) => {
+    const exist = model.getBien(req.params.id);
+    if (exist > 0){
+        let ok = model.deleteBien(exist);
+        res.redirect('gestion.html');
+    }
+    else {
+        res.redirect('gestion.html');
+    }
+});
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname) //Appending extension
+    }
+})
+
+var upload = multer({ storage: storage });
+
+
+app.post('/creer', upload.array('images', 20), async (req, res) => {
+    let type = req.body.type;
+    let nom = req.body.nom;
+    let lieu = req.body.lieu;
+    let code = req.body.code;
+    let pieces = req.body.pieces;
+    let chambres = req.body.chambres;
+    let surface = req.body.surface;
+    let terrain = req.body.terrain;
+    let prix = req.body.prix;
+    let plus = req.body.plus;
+    let bain = req.body.bain;
+    let caracteristiques = req.body.caracteristiques;
+    let description = req.body.description;
+    let eau = req.body.eau;
+    let annee = req.body.annee;
+    let dpe = req.body.dpe;
+    let ges = req.body.ges;
+    let images = "";
+    let id = model.getNewBienId().maxID;
+    let idCreateur = req.session.id;
+    const destPath = path.join(__dirname, 'public/images/'+id+'ACHAT');
+    const sourcePath = path.join(__dirname, '/uploads');
+    if (!fs.existsSync(destPath)) {
+        fs.mkdirSync(destPath, { recursive: true });
+    }
+    fs.readdir(sourcePath, (err, files) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.JPG', '.PNG', '.WEPB', '.webp']; // Extensions d'image acceptées
+            const imageFiles = files.filter((file) => {
+                const ext = path.extname(file).toLowerCase();
+                return imageExtensions.includes(ext);
+            });
+            imageFiles.forEach((file) => {
+                images = images+file+","
+                const oldPath = path.join(sourcePath, file);
+                const newPath = path.join(destPath, file);
+                fs.rename(oldPath, newPath, (err) => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        console.log(`Le fichier ${file} a été déplacé avec succès.`);
+                    }
+                });
+            });
+        }
+    });
+    await new Promise(resolve => setTimeout(resolve, 500));
+    images = images.substring(0, images.length-1);
+    let CreatedID = model.addNewBien(id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images, idCreateur);
+    res.redirect('gestion.html');
+});
+
+
+
+
 
 /*
 app.post('/pageAjouterFilm.html', (req, res) => {
@@ -331,8 +428,52 @@ app.get('/recrutement.html', (req, res) => {
     res.render('recrutement');
 });
 
+app.get('/gestion.html', (req, res) => {
+    if (req.session.user !== undefined){
+        let infos = model.getAllBiens();
+        res.render('gestion');
+    }
+    else{
+        res.redirect('connexion.html');
+    }
+});
+
+app.get('/ajout.html', (req, res) => {
+    if (req.session.user !== undefined){
+        let id = model.getNewBienId();
+        res.render('ajout', (id));
+    }
+    else{
+        res.redirect('connexion.html');
+    }
+});
+
+app.get('/creation.html', (req, res) => {
+    if (req.session.user !== undefined){
+        res.render('creation');
+    }
+    else{
+        res.redirect('connexion.html');
+    }
+});
+
 app.get('/connexion.html', (req, res) => {
-    res.render('connexion');
+    if (req.session.user !== undefined){
+        res.redirect('gestion.html');
+    }else{
+        res.render('connexion');
+    }
+});
+
+app.get('/signout.html', (req, res) => {
+    req.session.user = undefined;
+    req.session.name = undefined;
+    res.redirect('index.html');
+});
+
+app.get('/modifier.html/:id', (req, res) => {
+    let param = {id : req.params.id, ges : 3}
+    res.render('modifier.html', (param));
 });
 
 

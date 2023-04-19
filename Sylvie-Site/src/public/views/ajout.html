@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Agence des mandataires</title>
+    <link rel="icon" type="image/png" sizes="32x32"  href="../images/favicon.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-3.4.0.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="../css/style2.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/94433ee5f9af1127448781236a6d95c7?family=CavoliniW15-BoldItalic" rel="stylesheet" type="text/css"/>
+    <script src="../javascript/javascript.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+
+</head>
+<body onload="ajoutBien()">
+
+
+{{> header}}
+<div id="vendre" style="font-family: Ghotham, serif;margin: 0 auto; width: 70%; max-width: 220rem ; display: block;">
+    <div style="text-align: center;margin-bottom: 1rem;font-size: 1rem;">
+        <a><img id="titreVendre"  style="margin-top: 4%;" height="50" loading="lazy" src="../images/logo.jpg" alt="Logo"></a>
+        <h2 style="margin-top: 5%; margin-bottom: 3%">Ajoutez votre bien</h2>
+        <h5 style="margin-top: 5%; margin-bottom: 3%">Veuillez remplir ce formulaire pour ajouter un bien</h5>
+    </div>
+    <section class="mb-4">
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-12 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" action="/creer" method="post" enctype="multipart/form-data">
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="type" name="type" class="form-control" value="achat">
+                                <label for="type" class="">Type de bien</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="nom" name="nom" class="form-control">
+                                <label for="nom" class="">Nom de présentation</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="lieu" name="lieu" class="form-control">
+                                <label for="lieu" class="">Ville / Lieu</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="code" name="code" class="form-control">
+                                <label for="code" class="">Code postal</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="pieces" name="pieces" class="form-control">
+                                <label for="pieces" class="">Nombre de pieces</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="chambres" name="chambres" class="form-control">
+                                <label for="chambres" class="">Nombre de chambres</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="surface" name="surface" class="form-control">
+                                <label for="surface" class="">Surface</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="terrain" name="terrain" class="form-control">
+                                <label for="terrain" class="">Surface du terrain (0 si nul)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="prix" name="prix" class="form-control">
+                                <label for="prix" class="">Prix</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="plus" name="plus" class="form-control">
+                                <label for="plus" class="">Les plus (grand terrain,place de parking,...)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="bain" name="bain" class="form-control">
+                                <label for="bain" class="">Nombre de salles de bain</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="text" id="caracteristiques" name="caracteristiques" class="form-control">
+                                <label for="caracteristiques" class="">Les caracteristiques (2 étages,4 chambres,...)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form">
+                                <textarea required type="text" id="description" name="description" rows="2" class="form-control md-textarea"></textarea>
+                                <label for="description">Description du bien</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="eau" name="eau" class="form-control">
+                                <label for="eau" class="">Nombre de salle d'eau</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="annee" name="annee" class="form-control">
+                                <label for="annee" class="">Année de construction du bien</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="dpe" name="dpe" class="form-control">
+                                <label for="dpe" class="">Diagnostique de performance energetique (DPE) </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input required type="number" id="ges" name="ges" class="form-control">
+                                <label for="ges" class="">Gaz à effet de serre (GES)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="file" id="images" name="images" class="form-control" multiple>
+                                <label for="images" class="">Images du bien</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <a type="number" id="id" name="id" class="form-control">{{maxID}}</a>
+                                <label for="id" class="">Id</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <div class="text-center text-md-left" style="text-align: center !important;">
+                    <button type="submit"  class="btn btn-primary" style="color: white !important; padding: 10px 30px 10px 30px; align-content: center !important;width: 14rem;" >Ajouter le bien</button>
+                    <div class="status"></div>
+                </div>
+
+                </form>
+
+                <div class="text-center text-md-left" style="text-align: center !important;margin-top: 2%;">
+                    <button type="button"  class="btn btn-primary" onclick="history.back();" style="color: white !important; padding: 10px 30px 10px 30px; align-content: center !important;width: 10rem;" >Retour</button>
+                    <div class="status"></div>
+                </div>
+            </div>
+
+            <!--Grid column-->
+
+
+            <!--Grid column-->
+
+        </div>
+
+    </section>
+</div>
+
+</body>
+
+{{> footer}}
+</html>

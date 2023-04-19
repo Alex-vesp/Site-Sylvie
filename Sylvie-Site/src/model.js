@@ -318,7 +318,7 @@ exports.read = (id) => {
             date: "20220616",
             DPE: "151",
             GES: "8",
-            photos: ["../images/ACHAT7/1.jpg", "../images/ACHAT7/2.jpg", "../images/ACHAT7/3.jpg", "../images/ACHAT7/4.jpg", "../images/ACHAT7/5.jpg", "../images/ACHAT7/6.jpg", "../images/ACHAT7/7.jpg", "../images/ACHAT7/8.jpg", "../images/ACHAT7/9.jpg", "../images/ACHAT7/10.jpg"],
+            photos: ["../images/ACHAT7/1.png", "../images/ACHAT7/2.png", "../images/ACHAT7/3.png", "../images/ACHAT7/4.png", "../images/ACHAT7/5.png", "../images/ACHAT7/6.png", "../images/ACHAT7/7.png", "../images/ACHAT7/8.png", "../images/ACHAT7/9.png", "../images/ACHAT7/10.png"],
         }
     }
     if (id == 8){
@@ -408,6 +408,76 @@ exports.read = (id) => {
             DPE: "250",
             GES: "8",
             photos: ["../images/ACHAT10/1.jpg", "../images/ACHAT10/2.jpg", "../images/ACHAT10/3.jpg", "../images/ACHAT10/4.jpg", "../images/ACHAT10/5.jpg"],
+        }
+    }
+    if (id == 11){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison de village",
+            lieu: "Lançon-Provence",
+            pieces: 4,
+            chambres: 3,
+            surface: 80,
+            terrain: 100,
+            prix: "212 000",
+            plus: ["Terrasse", "Garage", "Cuisine aménagée"],
+            caracteristiques: ["4 pièces", "3 chambres"],
+            description: "EN EXCLUSIVITE Sylvie Vespignani vous présente cette coquette maison de village de Type 4 en pierre de 80 M2 sur une parcelle de 100 M2 avec possibilité de garer un véhicule où l'aménager pour un espace de jeux pour les enfants, un garage de 20 M2 environ.\n" +
+                "                            A l'étage, proche de la cuisine, vous découvrirez une charmante terrasse permettant de déjeuner à l'extérieur. La pièce de vie/ cuisine aménagée offre un espace de 25 M2 suivi d'une chambre de 16 M2 actuellement transformée en salon.\n" +
+                "                            A l'étage, deux grandes chambres de 16 et 18M2 ainsi qu'un salle d'eau.\n" +
+                "                            La maison est actuellement louée sans défaillance par un bail de trois ans du 11/08/21\n" +
+                "                            Prix tout doux. A visiter rapidement.\n" +
+                "                            Mandat N°007\n" +
+                "                            Honoraires à la charge du vendeur de 12 000 euros. Estimation du coût de l'énergie 940 et 1310 euros",
+            reference: "007",
+            salleBain: 0,
+            salleEau: 1,
+            chauffage: "",
+            annee: "",
+            date: "20230413",
+            DPE: "202",
+            GES: "6",
+            photos: ["../images/ACHAT11/1.jpg", "../images/ACHAT11/2.jpg", "../images/ACHAT11/3.jpg", "../images/ACHAT11/4.jpg", "../images/ACHAT11/5.jpg"],
+        }
+    }
+    if (id == 12){
+        return {
+            id: id,
+            type: "achat",
+            bien: "Maison",
+            lieu: "Pélissane",
+            pieces: 6,
+            chambres: 3,
+            surface: 230,
+            terrain: 800,
+            prix: "699 000",
+            plus: ["Grand terrain", "Grand séjour", "Piscine"],
+            caracteristiques: ["Terrasses", "3 chambres", "6 pièces"],
+            description: "Laetitia Collerie, Mandataire immobilier (EI) vous propose un bien coup de cœur, rare à la vente.\n" +
+                "                            Venez découvrir cette charmante villa de 230m2 implantée sur un terrain de 800m2 sur la jolie commune de Pélissanne.\n" +
+                "                            Idéalement située, au calme, dans un cadre privilégié proche des commerces et écoles du village, cette villa vous séduira par ses volumes généreux et ses prestations soignées.\n" +
+                "                            Disposée sur 2 niveaux, cette villa offre un séjour très lumineux de 45m2 avec cheminée, une cuisine indépendante entièrement équipée, 3 chambres dont une avec dressing, 2 salles d’eau, un wc séparé avec rangements.\n" +
+                "                            Le deuxième niveau complète parfaitement ce bien avec une grande buanderie aménagée, une suite parentale de 20m2 accompagnée de ses 2 dressings et de sa salle d’eau avec wc.\n" +
+                "                            Vous serez charmé par l’extérieur aménagé de cette villa offrant un jardin ensoleillé, des terrasses à l’ombre des pins, un espace de détente ensoleillé autour d’une piscine 5X10 au sel.\n" +
+                "                            Un puits permet l’arrosage du jardin et le remplissage de la piscine.\n" +
+                "                            A visiter au plus vite !\n" +
+                "                            Honoraires à la charge de : Vendeur.  Date de réalisation du diagnostic énergétique : 31/03/2022\n" +
+                "                            Mandat numéro : 0010\n" +
+                "                            Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre 2910 € et 4000 € par an. Prix moyens des énergies indexés sur l'année 2021 (abonnements compris)\n" +
+                "                            Consommation énergie primaire : 237 kWh/m²/an.\n" +
+                "                            Consommation énergie finale : 182 kWh/m²/an.\n" +
+                "\n" +
+                "                            Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr",
+            reference: "0010",
+            salleBain: 0,
+            salleEau: 2,
+            chauffage: "",
+            annee: "",
+            date: "20230413",
+            DPE: "200",
+            GES: "22",
+            photos: ["../images/ACHAT12/1.jpg", "../images/ACHAT12/2.jpg", "../images/ACHAT12/3.jpg", "../images/ACHAT12/4.jpg", "../images/ACHAT12/5.jpg"],
         }
     }
     else {
@@ -656,9 +726,9 @@ exports.ajouter = function(listeActeurs, listeRealisateurs, listeGenres, idFilm)
 }
 */
 exports.login = function(user, password) {
-    var result = db.prepare('SELECT Utilisateur FROM Utilisateur WHERE Utilisateur = ? AND Password = ?').get(user, password);
+    var result = db.prepare('SELECT Utilisateur, ID FROM Utilisateur WHERE Utilisateur = ? AND Password = ?').get(user, password);
     if(result === undefined) return -1;
-    return result.Utilisateur;
+    return [result.Utilisateur,result.ID];
 }
 /*
 exports.new_user = function(user, mail, password, nom, prenom, date, genre, acteur, realisateur) {
@@ -716,3 +786,53 @@ exports.update_userPref = function(id, genre, acteur, realisateur) {
     db.prepare('UPDATE Utilisateur SET nomGenre = ?, idActeur = ?, idRealisateur = ?  WHERE idUtilisateur = ?').run(genre, acteur, realisateur, id);
 }
 */
+
+
+exports.getNewBienId = function() {
+    let maxID = db.prepare('SELECT MAX(ID) AS max_id FROM Bien').get().max_id;
+    if (maxID == undefined) maxID = 0 ;
+    return {maxID : maxID+1};
+}
+
+exports.addNewBien = (id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images, idCreateur) => {
+    let loi = "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché";
+    let date = new Date().toISOString();
+    let createdID = db.prepare('INSERT INTO Bien (type, nom, lieu, codePostal, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, loi, SalleBain, SalleEau, annee, date, dpe, ges, IDCreateur, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)').run(type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, loi, bain, eau, annee, date, dpe, ges, idCreateur, images).id;
+    return createdID;
+}
+
+exports.addNewUser = (email, user, password) => {
+    let role = "MAINT"
+    try{
+        db.prepare('INSERT INTO Utilisateur (password, utilisateur, email, role) VALUES (?, ?, ?, ?)').run(password, user, email, role).id;
+        let createdID = db.prepare('SELECT ID FROM Utilisateur WHERE utilisateur = ?').get(user).ID;
+        console.log(createdID);
+        return createdID;
+    }catch {return 0;}
+    return 0;
+
+}
+
+exports.getBien = (id) => {
+    let selected = db.prepare('SELECT id FROM Bien where id=?').get(id).id;
+    if (selected == undefined) selected = 0 ;
+    return selected;
+}
+
+exports.deleteBien = (id) => {
+    let selected = db.prepare('DELETE FROM Bien where id=?').run(id);
+    return 1;
+}
+
+exports.addNewBien = (id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images) => {
+    let loi = "Informations Loi ALUR : Honoraires inclus à la charge du vendeur =5.3% du prix TTC affiché";
+    let date = new Date().toISOString();
+    let createdID = db.prepare('INSERT INTO Bien (type, nom, lieu, codePostal, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, loi, SalleBain, SalleEau, annee, date, dpe, ges, IDCreateur, images) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)').run(type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, loi, bain, eau, annee, date, dpe, ges, 1, images).id;
+    return createdID;
+}
+
+exports.getAllBiens = () => {
+    let infos = db.prepare('SELECT * FROM BIEN').all();
+    console.log(infos)
+    return infos;
+}
