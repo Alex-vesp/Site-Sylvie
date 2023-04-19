@@ -169,10 +169,10 @@ app.post('/delete/:id', (req, res) => {
     const exist = model.getBien(req.params.id);
     if (exist > 0){
         let ok = model.deleteBien(exist);
-        res.redirect('gestion.html');
+        res.redirect('../gestion.html');
     }
     else {
-        res.redirect('gestion.html');
+        res.redirect('../gestion.html');
     }
 });
 
@@ -397,7 +397,8 @@ app.get('/index.html', (req, res) => {
 });
 
 app.get('/achat.html', (req, res) => {
-    res.render('achat');
+    let infos = model.getAllBiens();
+    res.render('achat', {infos});
 });
 
 app.get('/location.html', (req, res) => {
@@ -431,7 +432,7 @@ app.get('/recrutement.html', (req, res) => {
 app.get('/gestion.html', (req, res) => {
     if (req.session.user !== undefined){
         let infos = model.getAllBiens();
-        res.render('gestion');
+        res.render('gestion', {infos});
     }
     else{
         res.redirect('connexion.html');
@@ -472,7 +473,8 @@ app.get('/signout.html', (req, res) => {
 });
 
 app.get('/modifier.html/:id', (req, res) => {
-    let param = {id : req.params.id, ges : 3}
+    let param = model.getBienAll(req.params.id);
+    console.log(param)
     res.render('modifier.html', (param));
 });
 

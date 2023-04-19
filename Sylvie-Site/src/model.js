@@ -814,9 +814,14 @@ exports.addNewUser = (email, user, password) => {
 }
 
 exports.getBien = (id) => {
-    let selected = db.prepare('SELECT id FROM Bien where id=?').get(id).id;
+    let selected = db.prepare('SELECT id FROM Bien where id=?').get(id).ID;
     if (selected == undefined) selected = 0 ;
     return selected;
+}
+
+exports.getBienAll = (id) => {
+    let selected = db.prepare('SELECT * FROM Bien where id=?').all(id);
+    return selected[0];
 }
 
 exports.deleteBien = (id) => {
@@ -833,6 +838,13 @@ exports.addNewBien = (id, type, nom, lieu, code, pieces, chambres, surface, terr
 
 exports.getAllBiens = () => {
     let infos = db.prepare('SELECT * FROM BIEN').all();
-    console.log(infos)
+    for (var i = 0; i < infos.length; i++) {
+        infos[i].images = infos[i].images.split(',');
+        const first = infos[i].images.shift();
+        infos[i].images.push(first);
+        infos[i].Caracteristiques = infos[i].Caracteristiques.split(',');
+        infos[i].Plus = infos[i].Plus.split(',');
+
+    }
     return infos;
 }

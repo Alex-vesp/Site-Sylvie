@@ -179,6 +179,47 @@ function faireDefilerCarouselAvant(id){
     else x.children.item(0).children.item(number+1).classList.add('active');
 }
 
+function faireDefilerCarouselAvantBD(id){
+    let actives = 0;
+    x = document.getElementById(id);
+    size = x.children.item(0).children.length;
+    number=-1;
+    for (let i=0 ; i < size ; i++){
+        y = x.children.item(0).children.item(i);
+        if (y.classList.contains('active')){
+            actives ++;
+        }
+    }
+    if(actives > 1){
+        for (let i=0 ; i < size ; i++){
+        y = x.children.item(0).children.item(i);
+        if (y.classList.contains('active')){
+            y.classList.remove('active')
+            number = i;
+        }
+    }
+    if (number === size-1) {
+        x.children.item(0).children.item(0).classList.add('active');
+    }
+    else x.children.item(0).children.item(number+1).classList.add('active');
+    }
+    else{
+        for (let i=0 ; i < size ; i++){
+            y = x.children.item(0).children.item(i);
+            if (y.classList.contains('active')){
+                y.classList.remove('active')
+                number = i;
+                break;
+            }
+        }
+        if (number === size-1) {
+            x.children.item(0).children.item(0).classList.add('active');
+        }
+        else x.children.item(0).children.item(number+1).classList.add('active');
+    }
+
+}
+
 function println(data) {
     console.log("DATA" + data);
 }
@@ -199,6 +240,50 @@ function faireDefilerCarouselArriere(id){
         x.children.item(0).children.item(size-1).classList.add('active');
     }
     else x.children.item(0).children.item(number-1).classList.add('active');
+}
+
+function faireDefilerCarouselArriereBD(id){
+    let actives = 0;
+    x = document.getElementById(id);
+    size = x.children.item(0).children.length;
+    number=-1;
+    for (let i=0 ; i < size ; i++){
+        y = x.children.item(0).children.item(i);
+        if (y.classList.contains('active')){
+            actives ++;
+        }
+    }
+    console.log(actives)
+    if (actives > 1){
+        for (let i=0 ; i < size ; i++){
+            y = x.children.item(0).children.item(i);
+            if (y.classList.contains('active')){
+                y.classList.remove('active')
+                number = i;
+            }
+        }
+        if (number === 0) {
+            x.children.item(0).children.item(size-1).classList.add('active');
+        }
+        else x.children.item(0).children.item(number-1).classList.add('active');
+    }else{
+        x = document.getElementById(id);
+        size = x.children.item(0).children.length;
+        number=-1;
+        for (let i=0 ; i < size ; i++){
+            y = x.children.item(0).children.item(i);
+            if (y.classList.contains('active')){
+                y.classList.remove('active')
+                number = i;
+                break;
+            }
+        }
+        if (number === 0) {
+            x.children.item(0).children.item(size-1).classList.add('active');
+        }
+        else x.children.item(0).children.item(number-1).classList.add('active');
+    }
+
 }
 
 function close(){

@@ -41,7 +41,7 @@
 
             <!--Grid column-->
             <div class="col-md-12 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="/creer" method="post" enctype="multipart/form-data">
+                <form id="contact-form" name="contact-form" action="/modifier" method="post" enctype="multipart/form-data">
 
                     <!--Grid row-->
                     <div class="row">
@@ -49,7 +49,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="type" name="type" class="form-control">
+                                <input required type="text" id="type" name="type" value="{{Type}}" class="form-control">
                                 <label for="type" class="">Type de bien</label>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="nom" name="nom" class="form-control">
+                                <input required type="text" id="nom" name="nom" value="{{Nom}}" class="form-control">
                                 <label for="nom" class="">Nom de présentation</label>
                             </div>
                         </div>
@@ -70,13 +70,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="lieu" name="lieu" class="form-control">
+                                <input required type="text" id="lieu" name="lieu" value="{{Lieu}}" class="form-control">
                                 <label for="lieu" class="">Ville / Lieu</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="code" name="code" class="form-control">
+                                <input required type="text" id="code" name="code" value="{{CodePostal}}" class="form-control">
                                 <label for="code" class="">Code postal</label>
                             </div>
                         </div>
@@ -85,13 +85,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="pieces" name="pieces" class="form-control">
+                                <input required type="number" id="pieces" name="pieces" value="{{Pieces}}" class="form-control">
                                 <label for="pieces" class="">Nombre de pieces</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="chambres" name="chambres" class="form-control">
+                                <input required type="number" id="chambres" name="chambres" value="{{Chambres}}" class="form-control">
                                 <label for="chambres" class="">Nombre de chambres</label>
                             </div>
                         </div>
@@ -102,13 +102,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="surface" name="surface" class="form-control">
+                                <input required type="number" id="surface" name="surface" value="{{Surface}}" class="form-control">
                                 <label for="surface" class="">Surface</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="terrain" name="terrain" class="form-control">
+                                <input required type="number" id="terrain" name="terrain" value="{{Terrain}}" class="form-control">
                                 <label for="terrain" class="">Surface du terrain (0 si nul)</label>
                             </div>
                         </div>
@@ -118,13 +118,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="prix" name="prix" class="form-control">
+                                <input required type="text" id="prix" name="prix" value="{{Prix}}" class="form-control">
                                 <label for="prix" class="">Prix</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="plus" name="plus" class="form-control">
+                                <input required type="text" id="plus" name="plus" value="{{Plus}}" class="form-control">
                                 <label for="plus" class="">Les plus (grand terrain,place de parking,...)</label>
                             </div>
                         </div>
@@ -134,13 +134,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="bain" name="bain" class="form-control">
+                                <input required type="number" id="bain" name="bain" value="{{SalleBain}}" class="form-control">
                                 <label for="bain" class="">Nombre de salles de bain</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="text" id="caracteristiques" name="caracteristiques" class="form-control">
+                                <input required type="text" id="caracteristiques" name="caracteristiques" value="{{Caracteristiques}}" class="form-control">
                                 <label for="caracteristiques" class="">Les caracteristiques (2 étages,4 chambres,...)</label>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea required type="text" id="description" name="description" rows="2" class="form-control md-textarea"></textarea>
+                                <textarea required type="text" id="description" name="description"  rows="2" class="form-control md-textarea">{{Description}}</textarea>
                                 <label for="description">Description du bien</label>
                             </div>
 
@@ -164,13 +164,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="eau" name="eau" class="form-control">
+                                <input required type="number" id="eau" name="eau" value="{{SalleEau}}" class="form-control">
                                 <label for="eau" class="">Nombre de salle d'eau</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="annee" name="annee" class="form-control">
+                                <input required type="number" id="annee" name="annee" value="{{Annee}}" class="form-control">
                                 <label for="annee" class="">Année de construction du bien</label>
                             </div>
                         </div>
@@ -180,13 +180,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="dpe" name="dpe" class="form-control">
+                                <input required type="number" id="dpe" name="dpe" value="{{Dpe}}" class="form-control">
                                 <label for="dpe" class="">Diagnostique de performance energetique (DPE) </label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input required type="number" id="ges" name="ges" value="{{ges}}" class="form-control">
+                                <input required type="number" id="ges" name="ges" value="{{Ges}}" class="form-control">
                                 <label for="ges" class="">Gaz à effet de serre (GES)</label>
                             </div>
                         </div>
@@ -196,13 +196,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="file" id="images" name="images" class="form-control" multiple>
+                                <input type="file" id="images" name="images" value="{{images}}" class="form-control" multiple>
                                 <label for="images" class="">Images du bien</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <a type="number" id="id" name="id" class="form-control">{{id}}</a>
+                                <a type="number" id="id" name="id" class="form-control">{{ID}}</a>
                                 <label for="id" class="">Id</label>
                             </div>
                         </div>
