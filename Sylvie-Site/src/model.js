@@ -2,6 +2,8 @@
 /* Module de recherche dans une base de données de films */
 const Sqlite = require('better-sqlite3');
 let express = require('express');
+const fs = require("fs");
+const path = require("path");
 
 let db = new Sqlite('db.sqlite');
 /*
@@ -819,6 +821,12 @@ exports.getBien = (id) => {
     return selected;
 }
 
+exports.getImages = (id) => {
+    let selected = db.prepare('SELECT images FROM Bien where id=?').get(id).images;
+    if (selected == undefined) selected = "" ;
+    return selected;
+}
+
 exports.getBienAll = (id) => {
     let infos = db.prepare('SELECT * FROM Bien where id=?').all(id);
     for (var i = 0; i < infos.length; i++) {
@@ -852,4 +860,39 @@ exports.getAllBiens = () => {
 
     }
     return infos;
+}
+
+exports.modifyBien = (id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images, idCreateur) => {
+    let createdID = db.prepare('UPDATE Bien Set type=?, nom=?, lieu=?, codePostal=?, pieces=?, chambres=?, surface=?, terrain=?, prix=?, plus=?, caracteristiques=?, description=?, SalleBain=?, SalleEau=?, annee=?, dpe=?, ges=?, IDCreateur=?, images=? WHERE id=?').run(type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, idCreateur, images, id).id;
+    return createdID;
+}
+
+exports.images = async function (destPath, sourcePath, images){
+    if (!fs.existsSync(destPath)) {
+        fs.mkdirSync(destPath, { recursive: true });
+    }
+    fs.readdir(sourcePath, (err, files) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.JPG', '.PNG', '.WEPB', '.webp']; // Extensions d'image acceptées
+            const imageFiles = files.filter((file) => {
+                const ext = path.extname(file).toLowerCase();
+                return imageExtensions.includes(ext);
+            });
+            imageFiles.forEach((file) => {
+                images = images+file+","
+                const oldPath = path.join(sourcePath, file);
+                const newPath = path.join(destPath, file);
+                fs.rename(oldPath, newPath, (err) => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        console.log(`Le fichier ${file} a été déplacé avec succès.`);
+                    }
+                });
+            });
+        }
+    });
+    return images;
 }

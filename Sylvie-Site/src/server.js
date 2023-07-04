@@ -169,6 +169,14 @@ app.post('/delete/:id', (req, res) => {
     const exist = model.getBien(req.params.id);
     if (exist > 0){
         let ok = model.deleteBien(exist);
+        const folderPath = path.join(__dirname, 'public/images/'+req.params.id+'ACHAT');
+        fs.rmdir(folderPath, { recursive: true }, (err) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log(`Le dossier ${folderPath} a été supprimé avec succès.`);
+            }
+        });
         res.redirect('../gestion.html');
     }
     else {
@@ -237,13 +245,83 @@ app.post('/creer', upload.array('images', 20), async (req, res) => {
             });
         }
     });
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    //images = await model.images(destPath, sourcePath, images);
     images = images.substring(0, images.length-1);
     let CreatedID = model.addNewBien(id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images, idCreateur);
     res.redirect('gestion.html');
 });
 
-
+app.post('/modifier/:id', upload.array('images', 20), async (req, res) => {
+    let type = req.body.type;
+    let nom = req.body.nom;
+    let lieu = req.body.lieu;
+    let code = req.body.code;
+    let pieces = req.body.pieces;
+    let chambres = req.body.chambres;
+    let surface = req.body.surface;
+    let terrain = req.body.terrain;
+    let prix = req.body.prix;
+    let plus = req.body.plus;
+    let bain = req.body.bain;
+    let caracteristiques = req.body.caracteristiques;
+    let description = req.body.description;
+    let eau = req.body.eau;
+    let annee = req.body.annee;
+    let dpe = req.body.dpe;
+    let ges = req.body.ges;
+    let images = "";
+    let id = req.params.id;
+    let idCreateur = req.session.id;
+    let photos = req.body.images;
+    const destPath = path.join(__dirname, 'public/images/'+id+'ACHAT');
+    const sourcePath = path.join(__dirname, '/uploads');
+    if (photos == undefined){
+        fs.rmdir(destPath, { recursive: true }, (err) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log(`Le dossier ${destPath} a été supprimé avec succès.`);
+            }
+        });
+        await new Promise(resolve => setTimeout(resolve, 500));
+        if (!fs.existsSync(destPath)) {
+            fs.mkdirSync(destPath, { recursive: true });
+        }
+        fs.readdir(sourcePath, (err, files) => {
+            if (err) {
+                console.error(err);
+            } else {
+                const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.JPG', '.PNG', '.WEPB', '.webp']; // Extensions d'image acceptées
+                const imageFiles = files.filter((file) => {
+                    const ext = path.extname(file).toLowerCase();
+                    return imageExtensions.includes(ext);
+                });
+                imageFiles.forEach((file) => {
+                    images = images+file+","
+                    const oldPath = path.join(sourcePath, file);
+                    const newPath = path.join(destPath, file);
+                    fs.rename(oldPath, newPath, (err) => {
+                        if (err) {
+                            console.error(err);
+                        } else {
+                            console.log(`Le fichier ${file} a été déplacé avec succès.`);
+                        }
+                    });
+                });
+            }
+        });
+    }
+    if (photos != undefined) {
+        images = model.getImages(id);
+    }else{
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    //images = await model.images(destPath, sourcePath, images);
+    images = images.substring(0, images.length-1);
+    let CreatedID = model.modifyBien(id, type, nom, lieu, code, pieces, chambres, surface, terrain, prix, plus, caracteristiques, description, bain, eau, annee, dpe, ges, images, idCreateur);
+    res.redirect('../gestion.html');
+});
 
 
 
