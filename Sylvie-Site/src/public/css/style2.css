@@ -778,3 +778,8 @@ html::-webkit-scrollbar-thumb:hover {
     width: 50%;
 }
 
+.img-responsive{
+    max-width : 100%;
+    heigth: auto;
+    display: block;
+}

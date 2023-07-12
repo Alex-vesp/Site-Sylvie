@@ -509,6 +509,10 @@ app.get('/recrutement.html', (req, res) => {
     res.render('recrutement');
 });
 
+app.get('/honoraires.html', (req, res) => {
+    res.render('honoraires');
+});
+
 app.get('/gestion.html', (req, res) => {
     if (req.session.user !== undefined){
         let infos = model.getAllBiens();
